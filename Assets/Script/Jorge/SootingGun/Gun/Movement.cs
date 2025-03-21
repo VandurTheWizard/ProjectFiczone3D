@@ -10,8 +10,8 @@ public class Movement : MonoBehaviour
     private float yRotation = 0f;
 
     public GameObject pointOfGun;
-    private int balloons = 0;
 
+    public ShootingGunController gunController;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -21,8 +21,8 @@ public class Movement : MonoBehaviour
     {
         Vector2 vector = input.Get<Vector2>();
 
-        float mouseX = vector.x * sensitivity * Time.deltaTime;
-        float mouseY = vector.y * sensitivity * Time.deltaTime;
+        float mouseX = vector.x * sensitivity * (Time.deltaTime / Time.timeScale);
+        float mouseY = vector.y * sensitivity * (Time.deltaTime / Time.timeScale);
 
         yRotation += mouseX;
         yRotation = Mathf.Clamp(yRotation, minMovementY, maxMovementY);
@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         if(Physics.Raycast(pointOfGun.transform.position, -pointOfGun.transform.right * 99, out RaycastHit hit, 99f)){
             if (hit.collider.gameObject.CompareTag("Bubble"))
             {
-                balloons++;
+                gunController.ballonsDestroy++;
                 Destroy(hit.collider.gameObject);
             }
         }
