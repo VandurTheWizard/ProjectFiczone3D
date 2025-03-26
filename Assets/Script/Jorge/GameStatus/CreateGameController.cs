@@ -1,11 +1,10 @@
-using UnityEditor;
 using UnityEngine;
 
 public class CreateGameController : MonoBehaviour
 {
-    public SceneAsset[] microgamesScene;
-    public SceneAsset baseScene;
-    public SceneAsset loseScene;
+    public int[] microgamesScene;
+    public int baseScene;
+    public int loseScene;
 
     private static ControllerGame game; 
     private void Awake()

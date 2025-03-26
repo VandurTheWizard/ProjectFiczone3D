@@ -1,13 +1,12 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ControllerGame : MonoBehaviour
 {
-    public SceneAsset[] microgameScenes;
-    public SceneAsset baseScene;
-    public SceneAsset loseScene;
+    public int[] microgameScenes;
+    public int baseScene;
+    public int loseScene;
     private Coroutine coroutine;
 
     private int status = 0;
@@ -53,14 +52,14 @@ public class ControllerGame : MonoBehaviour
                 break;
         }
         status = WAIT;
-        SceneManager.LoadScene(baseScene.name);
+        SceneManager.LoadScene(baseScene);
         coroutine = null;
         
     }
 
     private void loadScene()
     {
-        SceneManager.LoadScene(microgameScenes[Random.Range(0, microgameScenes.Length)].name);
+        SceneManager.LoadScene(microgameScenes[Random.Range(0, microgameScenes.Length)]);
     }
 
     public void Lose()
