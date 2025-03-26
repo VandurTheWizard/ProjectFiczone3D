@@ -240,10 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09188e9cc3aed5b44bd96aef7df13a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microgamesScene:
-  - {fileID: 102900000, guid: ad805072088932c48a594d1efbb45660, type: 3}
-  baseScene: {fileID: 102900000, guid: 1ef469cbd0da5a44a8ba423583b31cc6, type: 3}
-  loseScene: {fileID: 0}
+  microgamesScene: 0100000002000000
+  baseScene: 0
+  loseScene: 0
 --- !u!4 &768027547
 Transform:
   m_ObjectHideFlags: 0
