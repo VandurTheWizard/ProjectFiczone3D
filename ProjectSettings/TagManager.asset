@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bubble
   - CarEnemies
+  - Enemy
+  - Fire
   layers:
   - Default
   - TransparentFX
