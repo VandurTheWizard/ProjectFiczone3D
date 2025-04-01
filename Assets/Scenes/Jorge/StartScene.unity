@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09188e9cc3aed5b44bd96aef7df13a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microgamesScene: 0100000002000000
+  microgamesScene: 010000000200000003000000
   baseScene: 0
   loseScene: 0
 --- !u!4 &768027547
