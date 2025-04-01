@@ -1,8 +1,6 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CarControlller : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class CarControlller : MonoBehaviour
     private float valueX = 0;
 
     private float time = 0;
-    private float maxTime = 5;
+    private float maxTime = 10;
 
     private ControllerGame controller;
     private bool isLose = false;
@@ -45,9 +43,10 @@ public class CarControlller : MonoBehaviour
 
         transform.position = new Vector3(firstValueX + valueX, transform.position.y, transform.position.z + velocityUp * Time.deltaTime);
 
-        time += Time.deltaTime / 3;
+        time += Time.deltaTime / Time.timeScale;
         if(time > maxTime && !isLose)
         {
+            Time.timeScale = 1;
             controller.Victory();
         }
     }
@@ -65,6 +64,6 @@ public class CarControlller : MonoBehaviour
     {
         Time.timeScale = 1;
         yield return new WaitForSeconds(1);
-        controller.Lose();
+        controller.Lose(); 
     }
 }
