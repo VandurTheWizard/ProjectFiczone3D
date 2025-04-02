@@ -8,6 +8,7 @@ TagManager:
   - CarEnemies
   - Enemy
   - Fire
+  - Trash
   layers:
   - Default
   - TransparentFX
