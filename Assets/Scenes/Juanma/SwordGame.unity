@@ -779,8 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117db812a5992734cbb788cc38f8a0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 10
-  enemyHealth: 20
+  playerHealth: 3
+  enemyHealth: 50
   playerHealthText: {fileID: 632232991}
   enemyHealthText: {fileID: 739235268}
 --- !u!1 &1011239813
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397717a9b86fe4c4f9404fe69c1fd7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   threshold: 0.1
   posIzq: {fileID: 1819990082}
   posDer: {fileID: 1191087672}
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   attackPrefab: {fileID: 5037617574169397149, guid: 2ed39efa2bd87914c83053feaf2a237a, type: 3}
   attackSpawnPoint: {fileID: 106956876}
   attackSpeed: 10
-  attackCooldown: 2
+  attackCooldown: 0.3
 --- !u!1 &1800148725
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ public class HealthManager : MonoBehaviour
 {
     public static HealthManager instance;
 
-    public int playerHealth = 10;
-    public int enemyHealth = 20;
+    public int playerHealth = 3;
+    public int enemyHealth = 10;
 
     public TMP_Text playerHealthText;
     public TMP_Text enemyHealthText;
@@ -40,8 +40,8 @@ public class HealthManager : MonoBehaviour
 
     void UpdateUI()
     {
-        playerHealthText.text = "Player HP " + playerHealth + "/10";
-        enemyHealthText.text = "Dragon HP " + enemyHealth + "/20";
+        playerHealthText.text = "Player HP " + playerHealth + "/3";
+        enemyHealthText.text = "Dragon HP " + enemyHealth + "/50";
     }
 
     void CheckGameOver()
