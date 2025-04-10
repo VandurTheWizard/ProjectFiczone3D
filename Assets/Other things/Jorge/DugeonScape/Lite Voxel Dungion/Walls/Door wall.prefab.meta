@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 102b71fa25f67cf48a43dcd252852340
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Walls/Door wall.prefab
+  uploadId: 259352

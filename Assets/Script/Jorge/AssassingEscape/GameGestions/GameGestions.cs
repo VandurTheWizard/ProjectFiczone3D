@@ -27,7 +27,7 @@ public class GameGestions : MonoBehaviour
             controller.Victory();
         }
 
-        time += Time.deltaTime;
+        time += Time.deltaTime / Time.timeScale;
 
         if(time > maxTime)
         {

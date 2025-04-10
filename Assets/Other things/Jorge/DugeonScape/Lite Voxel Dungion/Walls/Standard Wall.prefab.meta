@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f78dd9826becb5442876e4c500f79c6e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Walls/Standard Wall.prefab
+  uploadId: 259352

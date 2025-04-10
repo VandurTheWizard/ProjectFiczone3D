@@ -20,12 +20,12 @@ public class ShootingGunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime / Time.timeScale;
 
         if (ballonsDestroy == balloonHasBeenDestroy)
         {
             Cursor.lockState = CursorLockMode.None;
-            controller.Lose();
+            controller.Victory();
         }
 
         if (time >= MaxTime)

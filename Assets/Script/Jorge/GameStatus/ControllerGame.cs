@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class ControllerGame : MonoBehaviour
@@ -16,8 +17,8 @@ public class ControllerGame : MonoBehaviour
 
     private float waitTime = 0.1f;
 
-    private int life = 5;
-    private int point = 0;
+    [SerializeField] private int life = 5;
+    [SerializeField] private int point = 0;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -36,7 +37,6 @@ public class ControllerGame : MonoBehaviour
 
     private IEnumerator TheSceneIsOver()
     {
-
         yield return new WaitForSeconds(waitTime * 30);
         loadScene();
 
@@ -49,12 +49,16 @@ public class ControllerGame : MonoBehaviour
                 break;
             case LOSE:
                 life--;
+                point++;
                 break;
         }
         status = WAIT;
         SceneManager.LoadScene(baseScene);
         coroutine = null;
-        
+        if (point % 5 == 0 && Time.timeScale < 3)
+        {
+            Time.timeScale += 0.2f;
+        }
     }
 
     private void loadScene()

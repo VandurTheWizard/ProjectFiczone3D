@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cb980235fa9f0e0458d682d8fe91a63c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Floors/standaedfloor.prefab
+  uploadId: 259352
