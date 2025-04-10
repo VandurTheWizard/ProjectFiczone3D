@@ -21,5 +21,6 @@ public class ObjectRotator : MonoBehaviour
 
         transform.Rotate(Vector3.right, rotationX, Space.World);
         transform.Rotate(Vector3.up, rotationY, Space.World);
+        //transform.Rotate(rotationX, rotationY, 0);
     }
 }
