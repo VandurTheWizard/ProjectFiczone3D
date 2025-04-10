@@ -8,7 +8,7 @@ public class FireDugeonFloorDestruction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime / Time.timeScale;
 
         if (time > maxTime)
         {
