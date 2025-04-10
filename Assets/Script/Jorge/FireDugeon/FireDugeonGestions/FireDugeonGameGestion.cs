@@ -20,7 +20,6 @@ public class FireDugeonGameGestion : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         getPosition();
     }
 
@@ -40,7 +39,7 @@ public class FireDugeonGameGestion : MonoBehaviour
         int positionX = 2;
         int positionY = 2;
 
-        int dificult = 6 + (int)(Time.timeScale / 1 * 2);
+        int dificult = 2 + (int)(Time.timeScale / 0.25);
         while (x < dificult)
         {
             string addText = "";
