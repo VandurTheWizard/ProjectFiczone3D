@@ -783,7 +783,6 @@ GameObject:
   - component: {fileID: 1709849255414026567}
   - component: {fileID: 1709849255414026568}
   - component: {fileID: 1709849255414026569}
-  - component: {fileID: 1709849255414026570}
   m_Layer: 0
   m_Name: SM_Ak47
   m_TagString: Untagged
@@ -977,20 +976,6 @@ MonoBehaviour:
   maxMovementY: 30
   pointOfGun: {fileID: 1182732537}
   gunController: {fileID: 59295451}
---- !u!114 &1709849255414026570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647499140497243324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0788ce9191c3a54aae055756f28d08c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeScale: 1
-  balloons: {fileID: 59295449}
 --- !u!33 &2923929666329960846
 MeshFilter:
   m_ObjectHideFlags: 0

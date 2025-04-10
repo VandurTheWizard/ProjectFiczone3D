@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4710d4d66beeb59408ae416205b7e543
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Items/box.prefab
+  uploadId: 259352

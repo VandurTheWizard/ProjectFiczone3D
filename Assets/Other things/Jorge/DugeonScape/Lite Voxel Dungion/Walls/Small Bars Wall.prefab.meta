@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bcd2d8b6992808948b91a969be166d19
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Walls/Small Bars Wall.prefab
+  uploadId: 259352

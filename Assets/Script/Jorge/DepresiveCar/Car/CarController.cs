@@ -20,7 +20,7 @@ public class CarControlller : MonoBehaviour
     
     private void Start()
     {
-        Time.timeScale = 2.5f;
+        Cursor.lockState = CursorLockMode.Locked;
         firstValueX = transform.position.x;
         controller = GameObject.FindAnyObjectByType<ControllerGame>();
     }
@@ -46,7 +46,7 @@ public class CarControlller : MonoBehaviour
         time += Time.deltaTime / Time.timeScale;
         if(time > maxTime && !isLose)
         {
-            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.None;
             controller.Victory();
         }
     }
@@ -62,8 +62,8 @@ public class CarControlller : MonoBehaviour
 
     private IEnumerator wait()
     {
-        Time.timeScale = 1;
         yield return new WaitForSeconds(1);
+        Cursor.lockState = CursorLockMode.None;
         controller.Lose(); 
     }
 }

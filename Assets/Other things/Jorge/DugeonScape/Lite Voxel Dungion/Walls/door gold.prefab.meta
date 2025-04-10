@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b8f375099cdf31b4696ca5d9dff965dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Walls/door gold.prefab
+  uploadId: 259352

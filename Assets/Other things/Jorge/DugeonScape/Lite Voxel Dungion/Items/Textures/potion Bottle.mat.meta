@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b19cab5501e5b404495ef83152459368
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Items/Textures/potion Bottle.mat
+  uploadId: 259352

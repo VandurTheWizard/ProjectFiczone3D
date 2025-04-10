@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bdff4121f43153443915c39b7b0b1a6a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123372
+  packageName: Voxel Dungeon Lite
+  packageVersion: 1.2
+  assetPath: Assets/Lite Voxel Dungion/Items/Red Potion.prefab
+  uploadId: 259352
