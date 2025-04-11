@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BurguerController : MonoBehaviour
 {
-    [Tooltip("Objet to parent all lose hamburguer ingredient")]
+    [Tooltip("Objet to parent all loose hamburguer ingredient")]
     [SerializeField] private GameObject hamburguer;
 
     [Header("Movement")]
