@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5490310215688075063}
   - component: {fileID: 4951721679280661384}
   - component: {fileID: 607461957799759323}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: BreadTop
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

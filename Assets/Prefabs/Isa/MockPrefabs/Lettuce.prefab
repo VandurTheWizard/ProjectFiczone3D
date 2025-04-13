@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7770539670220362012
+--- !u!1 &5626190830398842605
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2425578822168633257}
-  - component: {fileID: 4151826289385565725}
-  - component: {fileID: 2427164936136616237}
-  - component: {fileID: 2225101199450649735}
-  - component: {fileID: 3447098443621328019}
+  - component: {fileID: 2168043153700260511}
+  - component: {fileID: 2128030130978019763}
+  - component: {fileID: 3531048087286966347}
+  - component: {fileID: 3501967465332847418}
+  - component: {fileID: 3852866888856328529}
   m_Layer: 0
-  m_Name: Cheese
-  m_TagString: Untagged
+  m_Name: Lettuce
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2425578822168633257
+--- !u!4 &2168043153700260511
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770539670220362012}
+  m_GameObject: {fileID: 5626190830398842605}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.04416494, z: 0}
-  m_LocalScale: {x: 217.94954, y: 217.52539, z: 9.255399}
+  m_LocalPosition: {x: -0, y: 0.050348032, z: 0}
+  m_LocalScale: {x: 162.80396, y: 162.80396, z: 8.325437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &4151826289385565725
+--- !u!33 &2128030130978019763
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770539670220362012}
-  m_Mesh: {fileID: -2544318000483907571, guid: 8426689871d52a64ab848ae449da7ca2, type: 3}
---- !u!23 &2427164936136616237
+  m_GameObject: {fileID: 5626190830398842605}
+  m_Mesh: {fileID: 3340569556511490778, guid: 8426689871d52a64ab848ae449da7ca2, type: 3}
+--- !u!23 &3531048087286966347
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770539670220362012}
+  m_GameObject: {fileID: 5626190830398842605}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db597e0d629d6664c8ca129e7679543f, type: 2}
+  - {fileID: 2100000, guid: f3427f6120671424ca56c594a291a88c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +88,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2225101199450649735
+--- !u!54 &3501967465332847418
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770539670220362012}
+  m_GameObject: {fileID: 5626190830398842605}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -114,14 +114,14 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &3447098443621328019
+  m_CollisionDetection: 2
+--- !u!65 &3852866888856328529
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770539670220362012}
+  m_GameObject: {fileID: 5626190830398842605}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -134,5 +134,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.002, y: 0.0019999996, z: 0.0019999996}
-  m_Center: {x: 0, y: 0, z: -0.000000007450581}
+  m_Size: {x: 0.0020000003, y: 0.0019999999, z: 0.0019999996}
+  m_Center: {x: 0, y: 0, z: 0.000000007450581}

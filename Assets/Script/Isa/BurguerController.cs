@@ -1,14 +1,17 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BurguerController : MonoBehaviour
 {
-    [Tooltip("Objet to parent all lose hamburguer ingredient")]
+    [Tooltip("Objet to parent all loose hamburguer ingredient")]
     [SerializeField] private GameObject hamburguer;
 
     [Header("Movement")]
     [SerializeField] private float movementSpeed;
     private Vector3 endPosition;
+    private Vector3 startPosition;
 
     [Header("Level data")]
     [SerializeField] private SerializableBurguer levelDB;
@@ -16,15 +19,24 @@ public class BurguerController : MonoBehaviour
     private Dictionary<int, GameObject> ingredientMap = new Dictionary<int, GameObject>();
     private Lvl[] levelList;
 
+    [Header("Status Text")]
+    [SerializeField] private TextMeshProUGUI nextTMP;
+
     //Nav variables
     private int currentLevel;
     private int currentBurguer;
     private int currentIngredient;
 
+    private bool canPlay=true;
+
+    private int ingredientPoints = 0;
+
 
     private void Awake()
     {
         endPosition = new Vector3(1, transform.position.y, transform.position.z);
+        startPosition = new Vector3(0, transform.position.y, transform.position.z);
+
 
         //Start level1
         currentLevel = 0;
@@ -32,6 +44,7 @@ public class BurguerController : MonoBehaviour
         currentIngredient = 0;
 
         FillDictionary();
+
     }
 
 
@@ -39,6 +52,8 @@ public class BurguerController : MonoBehaviour
     {
         levelList = levelDB.GetLvlList();
         SetIngredient();
+
+        //CountIngredient();
     }
 
 
@@ -46,14 +61,20 @@ public class BurguerController : MonoBehaviour
     {
         MoveAlongScreen();
     }
+
     private void OnJump()
     {
-        GameObject myChild = gameObject.transform.GetChild(0).gameObject;
+        if (LevelManager.Instance.playing && canPlay)
+        {
+            GameObject myChild = gameObject.transform.GetChild(0).gameObject;
 
-        myChild.transform.SetParent(hamburguer.transform, true);
-        myChild.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            myChild.transform.SetParent(hamburguer.transform, true);
+            myChild.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
-        myChild.GetComponent<Rigidbody>().useGravity = true;
+            myChild.GetComponent<Rigidbody>().useGravity = true;
+
+            canPlay = false;
+        }
     }
 
     private void MoveAlongScreen()
@@ -69,16 +90,32 @@ public class BurguerController : MonoBehaviour
 
     }
 
+    private void ResetPosition()
+    {
+        transform.position = startPosition;
+    }
+
+    IEnumerator ShowText(string text)
+    {
+        yield return new WaitForSeconds(0.2f);
+        nextTMP.enabled = true;
+        nextTMP.text = text;
+        yield return new WaitForSeconds(1f);
+        nextTMP.enabled = false;
+    }
+
     #region Ingredient controll
     Burguer myBurguer;
     private void SetIngredient()
     {
+        ResetPosition();
         myBurguer = levelList[currentLevel].burguers[currentBurguer];
         if (ingredientMap.TryGetValue(((int)myBurguer.ingredients[currentIngredient]), out GameObject go))
         {
             //Set ingredient in generator
             GameObject instantiatedGo = Instantiate(go, transform, false);
             instantiatedGo.GetComponent<Rigidbody>().useGravity = false;
+            canPlay = true;
         }
     }
 
@@ -91,11 +128,21 @@ public class BurguerController : MonoBehaviour
             currentIngredient = 0;
             currentBurguer++;
 
-            if (currentBurguer == 5) //if its last burguer we go to next lvl
+            StartCoroutine(ShowText("Keep it up"));
+            movementSpeed = movementSpeed + 0.1f;
+
+            foreach (Transform child in hamburguer.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+
+            if (currentBurguer == 5 && currentLevel+1 < levelList.Length) //if its last burguer we go to next lvl
             {
                 currentBurguer = 0;
                 currentLevel++;
 
+                StartCoroutine(ShowText("Faster!"));
+                movementSpeed = movementSpeed * 1.5f;
                 //TO DO: NEXT LVL
             }
         }
@@ -104,6 +151,7 @@ public class BurguerController : MonoBehaviour
     }
     #endregion
 
+    #region Control Methods
     private void FillDictionary()
     {
         for (int i = 0; i < ingredients.Count; i++)
@@ -111,4 +159,26 @@ public class BurguerController : MonoBehaviour
             ingredientMap.Add(i, ingredients[i]);
         }
     }
+
+
+    private void CountIngredient()
+    {
+        int burguerNumber = 0;
+        int ingredientNumber = 0;
+        foreach (Lvl level in levelList)
+        {
+            foreach (Burguer burguer in level.burguers)
+            {
+                burguerNumber++;
+                for (int i = 0; i < burguer.ingredients.Count; i++)
+                {
+                    ingredientNumber++;
+                    //Debug.Log(burguer.ingredients[i]);
+                }
+            }
+        }
+        int totalPointsNeeded = (ingredientNumber - burguerNumber) * 2 + burguerNumber; //Todos los ingredientes menos los bollos de abajo *2 (perfect) + los bollos (nunca son perfect)
+        Debug.Log(totalPointsNeeded);
+    }
+    #endregion
 }

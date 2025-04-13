@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class TableToucher : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public GameObject fallGO;
+    private void OnCollisionEnter(Collision collision)
     {
-        GameObject.Find("Generator").gameObject.GetComponent<BurguerController>().NextIngredient();
+        //Something touched the table
+
+        //decir a fallcontroller que tocaron la mesa
+        fallGO.gameObject.GetComponent<FallController>().tableTouched = true;
+        //GameObject.Find("Generator").gameObject.GetComponent<BurguerController>().NextIngredient();
     }
+
+
 }
