@@ -5,9 +5,13 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI textCountdown;
     [SerializeField] private Canvas canvas;
-    float counter;
+    [SerializeField] private GameObject panelStart;
+
+    [HideInInspector] public bool playing = false;
+    private float counter;
 
     private void Awake()
     {
@@ -17,7 +21,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        canvas.enabled = true;
+        panelStart.SetActive(true);
         textCountdown.text = "3";
         counter = 4;
     }
@@ -31,7 +35,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            canvas.enabled = false;
+            playing = true;
+            panelStart.SetActive(false);
         }
     }
 }

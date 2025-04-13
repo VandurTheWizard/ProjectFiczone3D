@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2889912294809664474}
   - component: {fileID: 3974452781178218774}
   - component: {fileID: 5108371106468216921}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: BreadBottom
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
