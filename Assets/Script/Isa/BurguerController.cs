@@ -22,6 +22,10 @@ public class BurguerController : MonoBehaviour
     [Header("Status Text")]
     [SerializeField] private TextMeshProUGUI nextTMP;
 
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource fallSound;
+
     //Nav variables
     private int currentLevel;
     private int currentBurguer;
@@ -72,6 +76,8 @@ public class BurguerController : MonoBehaviour
             myChild.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
             myChild.GetComponent<Rigidbody>().useGravity = true;
+
+            fallSound.Play();
 
             canPlay = false;
         }

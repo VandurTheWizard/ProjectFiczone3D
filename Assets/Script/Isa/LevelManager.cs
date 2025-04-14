@@ -10,6 +10,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject panelStart;
 
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource music;
+
     [HideInInspector] public bool playing = false;
     private float counter;
 
@@ -23,20 +27,24 @@ public class LevelManager : MonoBehaviour
     {
         panelStart.SetActive(true);
         textCountdown.text = "3";
-        counter = 4;
+        counter = 3;
     }
 
     private void Update()
     {
-        if (counter > 0)
+        if (!playing)
         {
-            counter = counter - Time.deltaTime;
-            textCountdown.text = Mathf.Floor(counter).ToString();
-        }
-        else
-        {
-            playing = true;
-            panelStart.SetActive(false);
+            if (counter > 0.5)
+            {
+                counter = counter - Time.deltaTime;
+                textCountdown.text = Mathf.Floor(counter+1).ToString();
+            }
+            else
+            {
+                playing = true;
+                panelStart.SetActive(false);
+                music.Play();
+            }
         }
     }
 }
