@@ -47,7 +47,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: f5c4c9f918e22484c8c10945755ff96d, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -99,7 +99,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: d7562b5bbf6cd0343b8e133a8e62667a, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -151,7 +151,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 97e3f6263187e58418c59e59ff19b8bd, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -203,7 +203,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 97f9fc6682fcb304e8ee3ad094a088ca, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -255,7 +255,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 304de03a90b620744a18ba2c9f617493, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -307,7 +307,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: f9d271c450f827f4ba5b6205f3edc89f, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1

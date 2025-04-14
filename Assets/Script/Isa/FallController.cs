@@ -6,14 +6,23 @@ using UnityEngine.UI;
 
 public class FallController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI stateTMP;
+    [SerializeField] private TextMeshProUGUI goodText,perfectText, failText;
     [SerializeField] private Slider scoreSlider;
+    [SerializeField] private GameObject sliderIcon;
 
-    private int finalScore=0;
     private int score = 0;
 
     public bool tableTouched = false;
 
+    private void Start()
+    {
+        sliderIcon.gameObject.SetActive(false);
+        scoreSlider.gameObject.SetActive(false);
+
+        goodText.enabled = false;
+        perfectText.enabled = false;
+        failText.enabled = false;
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -28,24 +37,23 @@ public class FallController : MonoBehaviour
         if (tableTouched)
         {
             Debug.Log("Tocaste mesa");
-            StartCoroutine(ShowText("Fail"));
+            StartCoroutine(ShowText(0));
             tableTouched = false;
         }
         else
         {
-            finalScore++;
             Transform priorIngredient = other.transform.parent.GetChild(other.transform.GetSiblingIndex() - 1);
 
             if(Math.Abs(priorIngredient.position.x - other.transform.position.x) < 0.05f)
             {
                 Debug.Log("Perfect");
-                StartCoroutine(ShowText("Perfect!"));
+                StartCoroutine(ShowText(2));
                 UpdateScore(2);
             }
             else
             {
                 Debug.Log("Good");
-                StartCoroutine(ShowText("Good"));
+                StartCoroutine(ShowText(1));
                 UpdateScore(1);
             }
         }
@@ -56,15 +64,34 @@ public class FallController : MonoBehaviour
 
     private void UpdateScore(int pointsToAdd)
     {
+        if (score == 0)
+        {
+            sliderIcon.gameObject.SetActive(true);
+            scoreSlider.gameObject.SetActive(true);
+        }
+
         score += pointsToAdd;
         scoreSlider.value = score;
     }
 
-    IEnumerator ShowText(string text)
+    IEnumerator ShowText(int score)
     {
-        stateTMP.enabled = true;
-        stateTMP.text = text;
+        TextMeshProUGUI textShowed=failText;
+
+        switch (score)
+        {
+            case 1:
+                textShowed = goodText;
+                break;
+            case 2:
+                textShowed = perfectText;
+                break;
+        }
+
+        textShowed.enabled = true;
+
         yield return new WaitForSeconds(0.7f);
-        stateTMP.enabled = false;
+
+        textShowed.enabled = false;
     }
 }
