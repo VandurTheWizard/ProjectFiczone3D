@@ -130,10 +130,13 @@ public class BurguerController : MonoBehaviour
 
             StartCoroutine(ShowText("Keep it up"));
             movementSpeed = movementSpeed + 0.1f;
-
+                       
             foreach (Transform child in hamburguer.transform)
             {
-                GameObject.Destroy(child.gameObject);
+                if (!child.CompareTag( "Plate"))
+                {
+                    GameObject.Destroy(child.gameObject);
+                }
             }
 
             if (currentBurguer == 5 && currentLevel+1 < levelList.Length) //if its last burguer we go to next lvl
@@ -177,7 +180,7 @@ public class BurguerController : MonoBehaviour
                 }
             }
         }
-        int totalPointsNeeded = (ingredientNumber - burguerNumber) * 2 + burguerNumber; //Todos los ingredientes menos los bollos de abajo *2 (perfect) + los bollos (nunca son perfect)
+        int totalPointsNeeded = ingredientNumber  * 2; //Todos los ingredientes *2 (perfect)
         Debug.Log(totalPointsNeeded);
     }
     #endregion
