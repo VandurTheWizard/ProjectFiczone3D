@@ -152,7 +152,6 @@ public class BurguerController : MonoBehaviour
 
                 StartCoroutine(ShowText("Faster!"));
                 movementSpeed = movementSpeed * 1.5f;
-                //TO DO: NEXT LVL
             }
         }
 
