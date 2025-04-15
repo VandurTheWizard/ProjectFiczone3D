@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &100514109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -677,9 +677,9 @@ RectTransform:
   - {fileID: 584612386}
   m_Father: {fileID: 795924818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 36, y: -45}
   m_SizeDelta: {x: 72, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100514110
@@ -761,6 +761,7 @@ MonoBehaviour:
   - {fileID: 917437353052600875, guid: e49951af601868643b662597d07a6560, type: 3}
   - {fileID: 908818482831640638, guid: 7e98e7c61944592498d90c8539cda272, type: 3}
   nextTMP: {fileID: 1110619781}
+  burguerImage: {fileID: 1019021841}
   fallSound: {fileID: 1892636750}
 --- !u!114 &158799536
 MonoBehaviour:
@@ -1958,7 +1959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &578475925
 Transform:
   m_ObjectHideFlags: 0
@@ -3435,7 +3436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1131026441
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3451,9 +3452,9 @@ RectTransform:
   - {fileID: 1373597462}
   m_Father: {fileID: 795924818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: -45}
   m_SizeDelta: {x: 72, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131026442
@@ -3838,6 +3839,13 @@ MonoBehaviour:
   failText: {fileID: 911683061}
   scoreSlider: {fileID: 661704150}
   sliderIcon: {fileID: 434168320}
+  burguerImage: {fileID: 1019021841}
+  imageFail1: {fileID: 584612387}
+  imageFail2: {fileID: 1373597463}
+  imageFail3: {fileID: 668520831}
+  containerFail1: {fileID: 100514108}
+  containerFail2: {fileID: 1131026440}
+  containerFail3: {fileID: 1911213331}
   tableTouched: 0
 --- !u!1 &1212587679
 GameObject:
@@ -5047,6 +5055,8 @@ MonoBehaviour:
   panelStart: {fileID: 1692979042}
   music: {fileID: 330161863}
   playing: 0
+  currentBurguer: 0
+  currentLevelt: 0
 --- !u!1001 &1834271689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5392,7 +5402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911213332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5408,9 +5418,9 @@ RectTransform:
   - {fileID: 668520830}
   m_Father: {fileID: 795924818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 184, y: -45}
   m_SizeDelta: {x: 72, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911213333

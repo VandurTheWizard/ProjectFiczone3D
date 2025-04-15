@@ -10,7 +10,13 @@ public class FallController : MonoBehaviour
     [SerializeField] private Slider scoreSlider;
     [SerializeField] private GameObject sliderIcon;
 
+    [Header("Images")]
+    [SerializeField] private Image burguerImage;
+    [SerializeField] private Image imageFail1, imageFail2, imageFail3;
+    [SerializeField] private GameObject containerFail1, containerFail2, containerFail3;
+
     private int score = 0;
+    private int fails= 0;
 
     public bool tableTouched = false;
 
@@ -72,8 +78,42 @@ public class FallController : MonoBehaviour
 
         score += pointsToAdd;
         scoreSlider.value = score;
+        LevelManager.Instance.finalScore = score;
     }
 
+    private int lastFailBurguer=-1, lastFailLevel=-1;
+    private void CountFail()
+    {
+        int currentBurguer = LevelManager.Instance.currentBurguer;
+        int currentLevel= LevelManager.Instance.currentLevelt;
+
+        if (currentBurguer!=lastFailBurguer || currentLevel != lastFailLevel) //Its a different burguer
+        {
+            fails++;
+            LevelManager.Instance.fails = fails;
+
+            lastFailLevel = currentLevel;
+            lastFailBurguer=currentBurguer;
+
+            //Set burguer in fail
+            switch (fails)
+            {
+                case 1:
+                    containerFail1.SetActive(true);
+                    imageFail1.sprite = burguerImage.sprite;
+                    break;
+                case 2:
+                    containerFail2.SetActive(true);
+                    imageFail2.sprite = burguerImage.sprite;
+                    break;
+                case 3:
+                    containerFail3.SetActive(true);
+                    imageFail3.sprite = burguerImage.sprite;
+                    LevelManager.Instance.EndGame();
+                    break;
+            }
+        }
+    }
     IEnumerator ShowText(int score)
     {
         TextMeshProUGUI textShowed=failText;
@@ -85,6 +125,9 @@ public class FallController : MonoBehaviour
                 break;
             case 2:
                 textShowed = perfectText;
+                break;
+            case 0:
+                CountFail();
                 break;
         }
 

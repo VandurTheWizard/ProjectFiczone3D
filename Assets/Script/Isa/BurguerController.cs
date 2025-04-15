@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BurguerController : MonoBehaviour
 {
@@ -19,8 +21,9 @@ public class BurguerController : MonoBehaviour
     private Dictionary<int, GameObject> ingredientMap = new Dictionary<int, GameObject>();
     private Lvl[] levelList;
 
-    [Header("Status Text")]
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI nextTMP;
+    [SerializeField] private Image burguerImage;
 
 
     [Header("Sound")]
@@ -68,7 +71,7 @@ public class BurguerController : MonoBehaviour
 
     private void OnJump()
     {
-        if (LevelManager.Instance.playing && canPlay)
+        if (LevelManager.Instance.playing && canPlay &&!LevelManager.Instance.end)
         {
             GameObject myChild = gameObject.transform.GetChild(0).gameObject;
 
@@ -85,7 +88,7 @@ public class BurguerController : MonoBehaviour
 
     private void MoveAlongScreen()
     {
-        if (transform.position != endPosition)
+        if (transform.position != endPosition && !LevelManager.Instance.end)
         {
             transform.position = Vector3.MoveTowards(transform.position, endPosition, movementSpeed * Time.deltaTime);
         }
@@ -115,13 +118,23 @@ public class BurguerController : MonoBehaviour
     private void SetIngredient()
     {
         ResetPosition();
-        myBurguer = levelList[currentLevel].burguers[currentBurguer];
-        if (ingredientMap.TryGetValue(((int)myBurguer.ingredients[currentIngredient]), out GameObject go))
+        try
         {
-            //Set ingredient in generator
-            GameObject instantiatedGo = Instantiate(go, transform, false);
-            instantiatedGo.GetComponent<Rigidbody>().useGravity = false;
-            canPlay = true;
+            myBurguer = levelList[currentLevel].burguers[currentBurguer];
+            if (ingredientMap.TryGetValue(((int)myBurguer.ingredients[currentIngredient]), out GameObject go))
+            {
+                //Set image
+                burguerImage.sprite = myBurguer.image;
+
+                //Set ingredient in generator
+                GameObject instantiatedGo = Instantiate(go, transform, false);
+                instantiatedGo.GetComponent<Rigidbody>().useGravity = false;
+                canPlay = true;
+            }
+        }
+        catch(Exception e)
+        {
+            LevelManager.Instance.EndGame();
         }
     }
 
@@ -133,6 +146,7 @@ public class BurguerController : MonoBehaviour
         {
             currentIngredient = 0;
             currentBurguer++;
+            LevelManager.Instance.currentBurguer = currentBurguer;
 
             StartCoroutine(ShowText("Keep it up"));
             movementSpeed = movementSpeed + 0.1f;
@@ -149,6 +163,8 @@ public class BurguerController : MonoBehaviour
             {
                 currentBurguer = 0;
                 currentLevel++;
+                LevelManager.Instance.currentBurguer = currentBurguer;
+                LevelManager.Instance.currentLevelt = currentLevel;
 
                 StartCoroutine(ShowText("Faster!"));
                 movementSpeed = movementSpeed * 1.5f;
