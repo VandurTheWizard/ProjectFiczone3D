@@ -28,6 +28,8 @@ public class BurguerController : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] private AudioSource fallSound;
+    [SerializeField] private AudioSource keepItSound;
+    [SerializeField] private AudioSource fasterSound;
 
     //Nav variables
     private int currentLevel;
@@ -35,8 +37,6 @@ public class BurguerController : MonoBehaviour
     private int currentIngredient;
 
     private bool canPlay=true;
-
-    private int ingredientPoints = 0;
 
 
     private void Awake()
@@ -167,6 +167,7 @@ public class BurguerController : MonoBehaviour
                 LevelManager.Instance.currentLevelt = currentLevel;
 
                 StartCoroutine(ShowText("Faster!"));
+                fasterSound.Play();
                 movementSpeed = movementSpeed * 1.5f;
             }
         }

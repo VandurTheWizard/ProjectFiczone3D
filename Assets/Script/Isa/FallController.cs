@@ -8,7 +8,13 @@ public class FallController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI goodText,perfectText, failText;
     [SerializeField] private Slider scoreSlider;
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject sliderIcon;
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource perfectSound;
+    [SerializeField] private AudioSource goodSound;
+    [SerializeField] private AudioSource failSound;
 
     [Header("Images")]
     [SerializeField] private Image burguerImage;
@@ -42,9 +48,9 @@ public class FallController : MonoBehaviour
         
         if (tableTouched)
         {
-            Debug.Log("Tocaste mesa");
             StartCoroutine(ShowText(0));
             tableTouched = false;
+            failSound.Play();
         }
         else
         {
@@ -52,15 +58,15 @@ public class FallController : MonoBehaviour
 
             if(Math.Abs(priorIngredient.position.x - other.transform.position.x) < 0.05f)
             {
-                Debug.Log("Perfect");
                 StartCoroutine(ShowText(2));
                 UpdateScore(2);
+                perfectSound.Play();
             }
             else
             {
-                Debug.Log("Good");
                 StartCoroutine(ShowText(1));
                 UpdateScore(1);
+                goodSound.Play();
             }
         }
         
@@ -78,6 +84,7 @@ public class FallController : MonoBehaviour
 
         score += pointsToAdd;
         scoreSlider.value = score;
+        scoreText.text = score.ToString();
         LevelManager.Instance.finalScore = score;
     }
 
