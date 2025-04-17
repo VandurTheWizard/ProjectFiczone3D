@@ -17,50 +17,65 @@ MonoBehaviour:
     burguers:
     - idBurguer: 1
       numRep: 1
+      image: {fileID: 21300000, guid: b501d8b984231194e86175c5eb564f95, type: 3}
       ingredients: 000000000100000005000000
     - idBurguer: 2
       numRep: 1
+      image: {fileID: 21300000, guid: b501d8b984231194e86175c5eb564f95, type: 3}
       ingredients: 000000000100000005000000
     - idBurguer: 3
       numRep: 1
+      image: {fileID: 21300000, guid: 6a819b23452c7f34291316523c373e10, type: 3}
       ingredients: 00000000010000000200000005000000
     - idBurguer: 4
       numRep: 1
+      image: {fileID: 21300000, guid: 6a819b23452c7f34291316523c373e10, type: 3}
       ingredients: 00000000010000000200000005000000
     - idBurguer: 5
       numRep: 1
+      image: {fileID: 21300000, guid: 63a6f15d2dec04b41a6d6bd24404cf7f, type: 3}
       ingredients: 000000000100000002000000010000000200000005000000
   - id: 2
     burguers:
     - idBurguer: 1
       numRep: 2
+      image: {fileID: 21300000, guid: 63a6f15d2dec04b41a6d6bd24404cf7f, type: 3}
       ingredients: 000000000100000002000000010000000200000005000000
     - idBurguer: 2
       numRep: 1
+      image: {fileID: 21300000, guid: 63a6f15d2dec04b41a6d6bd24404cf7f, type: 3}
       ingredients: 000000000100000002000000010000000200000000000000
     - idBurguer: 3
       numRep: 2
+      image: {fileID: 21300000, guid: 9b7392b1bbd509f4eb6a83f5636fea08, type: 3}
       ingredients: 000000000100000002000000030000000400000005000000
     - idBurguer: 4
       numRep: 1
+      image: {fileID: 21300000, guid: 9b7392b1bbd509f4eb6a83f5636fea08, type: 3}
       ingredients: 000000000100000002000000030000000400000005000000
     - idBurguer: 5
       numRep: 1
+      image: {fileID: 21300000, guid: 65a4f99e4b3830745bd29e9d98ff34a5, type: 3}
       ingredients: 0000000001000000020000000100000002000000030000000400000005000000
   - id: 3
     burguers:
     - idBurguer: 1
       numRep: 1
+      image: {fileID: 21300000, guid: 65a4f99e4b3830745bd29e9d98ff34a5, type: 3}
       ingredients: 0000000001000000020000000100000002000000030000000400000005000000
     - idBurguer: 2
       numRep: 1
+      image: {fileID: 21300000, guid: 20ba37492fa8a83419887020a539a448, type: 3}
       ingredients: 0000000002000000020000000100000003000000010000000400000005000000
     - idBurguer: 3
       numRep: 1
+      image: {fileID: 21300000, guid: a426fc338e075f7498ad583318663b96, type: 3}
       ingredients: 0000000001000000030000000100000003000000020000000100000002000000010000000300000004000000
     - idBurguer: 4
       numRep: 1
+      image: {fileID: 21300000, guid: 74b5c1827dfc62e499419d1fe3d60f16, type: 3}
       ingredients: 00000000010000000100000001000000020000000400000004000000030000000200000001000000020000000400000005000000
     - idBurguer: 5
       numRep: 1
+      image: {fileID: 21300000, guid: faa9eb07bd7672f41a6f998de9d6c2b6, type: 3}
       ingredients: 00000000040000000200000004000000020000000300000001000000010000000400000003000000000000000100000003000000030000000100000005000000

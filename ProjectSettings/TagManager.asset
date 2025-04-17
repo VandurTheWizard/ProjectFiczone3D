@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Fire
   - Trash
+  - Plate
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Plate
   - 
   - 
   - 

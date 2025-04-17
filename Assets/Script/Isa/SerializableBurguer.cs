@@ -32,6 +32,7 @@ public class Burguer
 {
     public int idBurguer;
     public int numRep;
+    public Sprite image;
     public List<Ingredient> ingredients;
 
     //public Ingredient ingredient;

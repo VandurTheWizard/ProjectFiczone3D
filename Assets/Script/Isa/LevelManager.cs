@@ -9,8 +9,17 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textCountdown;
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject panelStart;
+    
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource music;
 
     [HideInInspector] public bool playing = false;
+    [HideInInspector] public bool end = false;
+    [HideInInspector] public int currentBurguer=0;
+    [HideInInspector] public int currentLevelt=0;
+
+
     private float counter;
 
     private void Awake()
@@ -19,24 +28,39 @@ public class LevelManager : MonoBehaviour
         else Instance = this;
     }
 
+    [HideInInspector] public int finalScore;
+    [HideInInspector] public int fails;
+    public void EndGame()
+    {
+        end = true;
+        music.Stop();
+
+        
+        Debug.Log("Bara haz lo tuyo. Score: " + finalScore + "Fallos: " + fails);
+    }
+
     private void Start()
     {
         panelStart.SetActive(true);
         textCountdown.text = "3";
-        counter = 4;
+        counter = 3;
     }
 
     private void Update()
     {
-        if (counter > 0)
+        if (!playing)
         {
-            counter = counter - Time.deltaTime;
-            textCountdown.text = Mathf.Floor(counter).ToString();
-        }
-        else
-        {
-            playing = true;
-            panelStart.SetActive(false);
+            if (counter > 0.5)
+            {
+                counter = counter - Time.deltaTime;
+                textCountdown.text = Mathf.Floor(counter+1).ToString();
+            }
+            else
+            {
+                playing = true;
+                panelStart.SetActive(false);
+                music.Play();
+            }
         }
     }
 }
