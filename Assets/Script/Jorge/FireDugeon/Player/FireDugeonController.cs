@@ -12,6 +12,8 @@ public class FireDugeonController : MonoBehaviour
     Rigidbody rb;
 
     float time = 0;
+
+    public bool touchFireFloor = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,7 +24,7 @@ public class FireDugeonController : MonoBehaviour
     {
         time += Time.deltaTime / Time.timeScale;
         {
-            if (movement == Vector2.zero || time > 7)
+            if (movement == Vector2.zero || time > FireDugeonGameGestion.timePlay)
             {
                 animator.Play("Idle");
             }
