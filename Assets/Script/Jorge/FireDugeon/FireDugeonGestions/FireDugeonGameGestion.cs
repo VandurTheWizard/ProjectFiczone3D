@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 
 public class FireDugeonGameGestion : MonoBehaviour
 {
@@ -14,12 +15,19 @@ public class FireDugeonGameGestion : MonoBehaviour
     private string left = "\u2190";
     private string right = " \u2192";
 
-    
-    
+    public const int timePlay = 8;
+    private const int maxTime = 10;
+    private float time = 0;
+
+    public bool isInfinity = false;
+
+    public string nextScene;
+    private FireDugeonController player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = FindAnyObjectByType<FireDugeonController>();
         getPosition();
     }
 
@@ -86,8 +94,51 @@ public class FireDugeonGameGestion : MonoBehaviour
 
         text.text = movement;
         GameObject gameObject = list[positionX + positionY * 5];
-       Destroy(gameObject.GetComponent<FireDugeonFloorDestruction>());
+        Destroy(gameObject.GetComponent<FireDugeonFloorDestruction>());
 
+    }
+    
+    private void Update()
+    {
+        time += Time.deltaTime / Time.timeScale;
+
+        if (time > maxTime)
+        {
+            if (isInfinity)
+            {
+                if (player.touchFireFloor)
+                {
+                    infinityMovementLose();
+                }
+                else
+                {
+                    infinityMovementVictory();
+                }
+            }
+            else
+            {
+                if (player.touchFireFloor)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+        }
+    }
+
+    private void infinityMovementVictory()
+    {
+       Time.timeScale += 0.25f;
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void infinityMovementLose()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(nextScene);
     }
 
 }
