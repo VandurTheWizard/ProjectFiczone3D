@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canAttack = true;
     private PlayerParry playerParry;
+    public Animator animatorAttack;
+    public Animator swordAttack;
 
     void Start()
     {
@@ -26,6 +28,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
+        animatorAttack.SetTrigger("Attack");
+        swordAttack.SetTrigger("Attack");
         canAttack = false;
         GameObject newAttack = Instantiate(attackPrefab, attackSpawnPoint.position, attackSpawnPoint.rotation);
         Rigidbody rb = newAttack.GetComponent<Rigidbody>();
