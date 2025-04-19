@@ -5,8 +5,10 @@ public class GestionRumba : MonoBehaviour
 {
     private Basura basuraManager;
     public int nivel = 0;
+    public int maximoNivel = 3;
     public float tiempo = 10f;
     private Temporadizador temporizador;
+    private FinishMiniGame finishMiniGame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,25 +37,32 @@ public class GestionRumba : MonoBehaviour
     }
 
     public void NuevoNivel(){
-        nivel++;
         basuraManager = FindFirstObjectByType<Basura>();
         basuraManager.SetNumeroBasuraDisponible(nivel);
+        
         temporizador = FindFirstObjectByType<Temporadizador>();
-        temporizador.TiempoRestante(tiempo);
+        temporizador.TiempoRestante(tiempo + nivel * 5f);
+
+        finishMiniGame = FindFirstObjectByType<FinishMiniGame>();
+
+        if(nivel > maximoNivel)
+            nivel = maximoNivel;
+            
         basuraManager.IniciarNivel();
     }
 
     public void FinTiempo(){
-        Debug.Log("Fin del tiempo");
-        Debug.Log("Muestra final de nivel");
-        Debug.Log("Destruye GestionRumba");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        finishMiniGame.Finish(false);
+        Invoke("DestruirGestionRumba", 2.5f);
     }
 
     public void GanarNivel(){
         nivel++;
-        Debug.Log("Ganaste el nivel " + nivel);
+        finishMiniGame.Finish(true);
     }
 
+    private void DestruirGestionRumba(){
+        Destroy(gameObject);
+    }
 
 }

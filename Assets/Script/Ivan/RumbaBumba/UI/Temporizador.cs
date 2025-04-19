@@ -7,6 +7,7 @@ public class Temporadizador : MonoBehaviour
     public float tiempoRestante = 60f;
     public TextMeshProUGUI textMesh;
     private GestionRumba gestionRumba;
+    private bool timeIsOver = false;
 
     void Start()
     {
@@ -18,8 +19,10 @@ public class Temporadizador : MonoBehaviour
 
     void Update()
     {
+        if(timeIsOver) return;
         tiempoRestante -= Time.deltaTime;
         if(tiempoRestante <= 0f){
+            timeIsOver = true;
             tiempoRestante = 0f;
             gestionRumba.FinTiempo();
         }   
