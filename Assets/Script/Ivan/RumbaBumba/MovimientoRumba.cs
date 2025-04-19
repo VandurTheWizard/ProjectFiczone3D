@@ -9,10 +9,12 @@ public class MovimientoRumba : MonoBehaviour
 
     private bool estaEnMovimiento = false;
     private Rigidbody rb;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -22,9 +24,7 @@ public class MovimientoRumba : MonoBehaviour
             transform.Rotate(Vector3.forward * Time.deltaTime * velocidadRotacion);
         }else
         {
-            // Se mueve en coordenada local hacia abajo
             rb.linearVelocity = -(transform.up * velocidad);
-
         }
     }
 
@@ -32,9 +32,11 @@ public class MovimientoRumba : MonoBehaviour
     {
         if (context.performed)
         {
+            spriteRenderer.gameObject.SetActive(false);
             estaEnMovimiento = !estaEnMovimiento;
         }else if (context.canceled)
         {
+            spriteRenderer.gameObject.SetActive(true);
             estaEnMovimiento = false;
         }
     }
