@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GestionRumba : MonoBehaviour
 {
-    private Basura basuraManager;
+    private GeneradorBasura basuraManager;
     public int nivel = 0;
     public int maximoNivel = 3;
     public float tiempo = 10f;
+    public float tiempoXNivel = 5f;
     private Temporadizador temporizador;
     private FinishMiniGame finishMiniGame;
 
@@ -37,7 +38,7 @@ public class GestionRumba : MonoBehaviour
     }
 
     public void NuevoNivel(){
-        basuraManager = FindFirstObjectByType<Basura>();
+        basuraManager = FindFirstObjectByType<GeneradorBasura>();
         basuraManager.SetNumeroBasuraDisponible(nivel);
         
         temporizador = FindFirstObjectByType<Temporadizador>();

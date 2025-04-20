@@ -7,6 +7,7 @@ public class FinishMiniGame : MonoBehaviour
     public AnimacionesFinPartida animacionesFinPartida;
 
     public void Finish(bool isWin){
+        Debug.Log("Fin del juego: " + (isWin ? "Ganaste" : "Perdiste"));
         if (isWin)
         {
             AnimationWin();
