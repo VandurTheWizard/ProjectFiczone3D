@@ -22,7 +22,7 @@ public class DartScript : MonoBehaviour
     private bool isPress = false;
     private void Start()
     {
-        Time.timeScale = 5;
+        Time.timeScale = 3;
         startPosition = transform.position;
     }
 
