@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basura : MonoBehaviour
+public class GeneradorBasura : MonoBehaviour
 {
     [SerializeField] private List<GameObject> listaBasura = new List<GameObject>();
     [SerializeField] private int numeroBasuraDisponible = 1;
@@ -17,6 +17,11 @@ public class Basura : MonoBehaviour
     public void SetNumeroBasuraDisponible(int numeroBasura)
     {
         numeroBasuraDisponible = numeroBasura;
+        GestorPartidaRumba gestorPartidaRumba = FindFirstObjectByType<GestorPartidaRumba>();
+        if (gestorPartidaRumba != null)
+        {
+            gestorPartidaRumba.ObtenerNumeroBasura(numeroBasuraDisponible);
+        }
     }
 
     private bool ComprobarArrayBasura()

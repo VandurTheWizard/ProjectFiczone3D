@@ -1,54 +1,88 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] private GameObject [] paginas;
-    [SerializeField] private float tamanoEspacio = 50f;
-    [SerializeField] private GameObject botonPrefab;
-    [SerializeField] private GameObject espacioPaginas;
-    private RectTransform rectTransform;
-    void Start()
+    [System.Serializable]
+    public class Tutorial
     {
-        int numPaginas = paginas.Length;
+        public string nombreEscena;
+        public GameObject objetoTutorial;
+        public bool volverAVer = true;
+    }
 
-        rectTransform = espacioPaginas.GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(numPaginas * 50, rectTransform.sizeDelta.y);
+    public Tutorial[] tutoriales;
+    private Tutorial tutorialActual;
 
-        for (int i = 0; i < numPaginas; i++)
+    private bool primeraCarga = true;
+
+    void Awake()
+    {
+        if (FindObjectsByType<TutorialManager>(FindObjectsSortMode.None).Length > 1)
         {
-            CrearBoton(i);
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Escena cargada: " + scene.name);
+        MostrarTutorialParaEscena(scene.name);
+    }
+
+    void MostrarTutorial()
+    {
+        string nombreEscenaActual = SceneManager.GetActiveScene().name;
+        MostrarTutorialParaEscena(nombreEscenaActual);
+    }
+
+    void MostrarTutorialParaEscena(string nombreEscena)
+    {
+        foreach (Tutorial t in tutoriales)
+        {
+            if (t.nombreEscena == nombreEscena)
+            {
+                tutorialActual = t;
+                if (tutorialActual.volverAVer && tutorialActual.objetoTutorial != null)
+                {
+                    Instantiate(tutorialActual.objetoTutorial, Vector3.zero, Quaternion.identity);
+                }
+                return;
+            }
+        }
+        if(primeraCarga){
+            primeraCarga = false;
+            return;
+        }
+        Destroy(gameObject);
+    }
+
+    public void VolverAVerTutorial(bool volverAVerInput)
+    {
+        if (tutorialActual != null)
+        {
+            tutorialActual.volverAVer = volverAVerInput;
         }
     }
 
-    public void CambiarPagina(int pagina)
+    public void SalirTutorial()
     {
-         for (int i = 0; i < paginas.Length; i++)
+        if (tutorialActual != null && tutorialActual.objetoTutorial != null)
         {
-            if (i == pagina)
-            {
-                paginas[i].GetComponent<BotonPagina>().SetActivoBool(true);
-                paginas[i].SetActive(true);
-            }
-            else
-            {
-                paginas[i].GetComponent<BotonPagina>().SetActivoBool(false);
-                paginas[i].SetActive(false);
-            }
-        }
-    }
-
-    private void CrearBoton(int pagina){
-        GameObject boton = Instantiate(botonPrefab, espacioPaginas.transform);
-        boton.GetComponent<RectTransform>().anchoredPosition = new Vector2(pagina * tamanoEspacio + 25 - (rectTransform.sizeDelta.x / 2), 0);
-        boton.GetComponent<BotonPagina>().pagina = pagina;
-        boton.GetComponent<BotonPagina>().tutorialManager = gameObject;
-        if(pagina == 0)
-        {
-            boton.GetComponent<BotonPagina>().SetActivoBool(true);
-        }
-        else
-        {
-            boton.GetComponent<BotonPagina>().SetActivoBool(false);
+            tutorialActual.objetoTutorial.SetActive(false);
         }
     }
 }

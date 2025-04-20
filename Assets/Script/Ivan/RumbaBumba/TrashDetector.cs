@@ -5,7 +5,6 @@ public class TrashDetector : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private ArrayList trashList = new ArrayList();
-    private bool isTrashInRange = false;
     public float timeToChangeColor = 0.5f; 
     public float timeToWin = 1f;
     private float timer = 0f;
