@@ -21,7 +21,7 @@ public class CarControllerInfinity : MonoBehaviour
     public TextMeshProUGUI textMeshProUGUI;
     
     private float point = 0;
-    public string nextScene;
+    private bool isAddPoint = true;
     
     private void Start()
     {
@@ -48,7 +48,9 @@ public class CarControllerInfinity : MonoBehaviour
         transform.position = new Vector3(firstValueX + valueX, transform.position.y, transform.position.z + velocityUp * Time.deltaTime);
 
         time += Time.deltaTime / Time.timeScale;
-        point += Time.deltaTime * 10;
+        if(isAddPoint){
+            point += Time.deltaTime * 10;
+        }
         if (time > maxTime)
         {
             time = 0;
@@ -70,12 +72,11 @@ public class CarControllerInfinity : MonoBehaviour
 
     private IEnumerator wait()
     {
-        
-        Time.timeScale = 0;
-        yield return new WaitForSeconds(1);
+        isAddPoint = false;
         Time.timeScale = 1;
+        yield return new WaitForSeconds(1);
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(nextScene);
+        LeaderBoardGestions.activateLeaderBoardNotTime("DepresiveCar", (int)point);
 
     }
 }
