@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class RandomGameController : MonoBehaviour
@@ -9,8 +10,8 @@ public class RandomGameController : MonoBehaviour
     public string[] scenes;
 
     private static List<int> bufferScenes = new List<int>();
-    private static string mainScene = "";
-    private static string mainMenu = "";
+    private static string mainScene = "ModeRandom";
+    private static string mainMenu = "Menu";
     private const int maxGame = 5;
     public void Start()
     {
@@ -26,10 +27,10 @@ public class RandomGameController : MonoBehaviour
         }
         else
         {
-
-        }
             int nextGame = getNewNumber();
-        SceneManager.LoadScene(scenes[nextGame]);
+            SceneManager.LoadScene(scenes[nextGame]);
+        }
+           
     }
 
     private static void loadAtNotInfiniteMode()
@@ -58,6 +59,13 @@ public class RandomGameController : MonoBehaviour
             }
 
         }
+    }
+
+    public static void loadScene(string scene)
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(scene);
     }
 
     //private static void loadAtInfiniteMode()

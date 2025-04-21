@@ -95,7 +95,6 @@ public class DartGameGestion : MonoBehaviour
 
     private void loseWinNormal()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(nextScene);
+        RandomGameController.loadScene(nextScene);
     }
 }

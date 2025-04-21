@@ -137,8 +137,9 @@ public class FireDugeonGameGestion : MonoBehaviour
 
     private void infinityMovementLose()
     {
+        int point = (int)(Time.timeScale / 0.25f) - 4;
         Time.timeScale = 1;
-        SceneManager.LoadScene(nextScene);
+        LeaderBoardGestions.activateLeaderBoardNotTime("BocataLomoYa", point);
     }
 
 }
