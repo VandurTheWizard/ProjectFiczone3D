@@ -4048,9 +4048,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nivel: 0
-  maximoNivel: 3
+  maximoNivel: 10
   tiempo: 10
-  tiempoXNivel: 5
+  tiempoXNivel: 1.5
 --- !u!4 &1294416423
 Transform:
   m_ObjectHideFlags: 0
