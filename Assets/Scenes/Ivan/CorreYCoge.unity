@@ -191,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 387894640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ceadd557b3c704685368959fadb280, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cb63fa3a50b1c74081b4c94ea8dbdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nivel: 0
@@ -5376,22 +5376,6 @@ MonoBehaviour:
     m_ActionId: 8f09914c-ebdf-44dd-9701-ef818e926eab
     m_ActionName: 'Player/Parry[/Mouse/rightButton]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 911516939}
-        m_TargetAssemblyTypeName: MovimientoCorreYCoge, Assembly-CSharp
-        m_MethodName: OnMoveMouse
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8b3597f0-4be5-4cb6-b459-6771ef579fbe
-    m_ActionName: 'Player/MouseGolf[/Mouse/position]'
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
     m_ActionName: 'UI/Navigate[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/rightStick/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/rightStick/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/rightStick/left,/DualSenseGamepadHID/leftStick/right,/DualSenseGamepadHID/rightStick/right,/DualSenseGamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
@@ -5431,6 +5415,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 911516939}
+        m_TargetAssemblyTypeName: MovimientoCorreYCoge, Assembly-CSharp
+        m_MethodName: OnMoveMouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bbcff780-0ecf-4c17-ab5d-f1ed9ada5a61
+    m_ActionName: 'Player/MovimientoRaton[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5445,7 +5445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 911516937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e776f069914ef40b32a68f97136113, type: 3}
+  m_Script: {fileID: 11500000, guid: b17d3d5947043f54ca7ef734d436ef4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   zPlano: 10
@@ -5548,7 +5548,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 911516937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a0ba8532f053b4fa52793960cb1981, type: 3}
+  m_Script: {fileID: 11500000, guid: e67ce16ca381d3949b42059f94ae98e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &911516945
@@ -5607,7 +5607,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000514233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f388a1e4a07f78949ad7b70d3000eaf5, type: 3}
+  m_Script: {fileID: 11500000, guid: c16496be6ef9ab64e90bf48c121e9d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoRestante: 10
@@ -5984,12 +5984,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1578077388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0e69b7e7198074cb1126d267d3237a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d925cb9e48e84d47a4ec7273c333678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 2169980983368677888, guid: f7aafa4d44eea874994fb7149020a19e, type: 3}
-  xMin: -9
-  xMax: 9
+  prefabToSpawn: {fileID: 691154393367642562, guid: 9b4dc3828f021484da1f3d7a55378486, type: 3}
+  xMin: -5
+  xMax: 5
   spawnInterval: 0.5
   spawnAtStart: 1
 --- !u!65 &1578077390
