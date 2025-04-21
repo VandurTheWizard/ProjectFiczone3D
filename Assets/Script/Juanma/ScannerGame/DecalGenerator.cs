@@ -8,6 +8,18 @@ public class DecalGenerator : MonoBehaviour
 
     void Start()
     {
+        if (targetObject == null)
+        {
+            GameObject found = GameObject.FindGameObjectWithTag("Fire");
+            if (found != null)
+            {
+                targetObject = found.transform;
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró un objeto con el tag 'Fire'");
+            }
+        }
         SpawnDecals();
     }
 

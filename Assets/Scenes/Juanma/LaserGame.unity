@@ -680,7 +680,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a876bed562f047845813ee62c781d38d, type: 2}
+  - {fileID: 2100000, guid: a987bed613ef98f47aaf6369783cc0f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2145,7 +2145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef99b7c31e99ff94482da16010522afd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -320
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef99b7c31e99ff94482da16010522afd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2190,7 +2190,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ef99b7c31e99ff94482da16010522afd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7a550e6feb6632f48b5376706828850b, type: 2}
+      objectReference: {fileID: 2100000, guid: a987bed613ef98f47aaf6369783cc0f6, type: 2}
     - target: {fileID: 919132149155446097, guid: ef99b7c31e99ff94482da16010522afd, type: 3}
       propertyPath: m_Name
       value: cilindro
