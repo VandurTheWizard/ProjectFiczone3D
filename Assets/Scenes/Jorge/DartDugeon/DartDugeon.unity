@@ -612,6 +612,8 @@ MonoBehaviour:
   - {fileID: 2910516053181101941, guid: 727bb6cb6e980cb4eaa9eeb25e11c48a, type: 3}
   point: 0
   life: 3
+  isInfinite: 1
+  nextScene: 
 --- !u!4 &310877133
 Transform:
   m_ObjectHideFlags: 0
