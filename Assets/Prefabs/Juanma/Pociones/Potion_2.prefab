@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6261536044800688009}
   m_Layer: 0
   m_Name: Potion_2
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,4 +252,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0e0cef8bbd2d04aa03ee77e10e2e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 200
