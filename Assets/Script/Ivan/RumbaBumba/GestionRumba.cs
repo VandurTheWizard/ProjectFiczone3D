@@ -53,6 +53,7 @@ public class GestionRumba : MonoBehaviour
     }
 
     public void FinTiempo(){
+        LeaderBoardGestions.activateLeaderBoardNotTime("Rumba", nivel);
         finishMiniGame.Finish(false);
         Invoke("DestruirGestionRumba", 2.5f);
     }
