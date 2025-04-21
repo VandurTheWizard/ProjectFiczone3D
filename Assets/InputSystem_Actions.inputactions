@@ -45,7 +45,7 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -114,9 +114,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseGolf",
+                    "name": "MovimientoRaton",
                     "type": "Value",
-                    "id": "8b3597f0-4be5-4cb6-b459-6771ef579fbe",
+                    "id": "bbcff780-0ecf-4c17-ab5d-f1ed9ada5a61",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -544,12 +544,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ba741d56-14f7-4968-a2ca-f17c875c2f09",
+                    "id": "40997059-9a48-49b0-8c07-da4a624056e2",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseGolf",
+                    "action": "MovimientoRaton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
