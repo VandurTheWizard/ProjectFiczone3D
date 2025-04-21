@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DartGameGestion : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DartGameGestion : MonoBehaviour
     public int point = 0;
 
     public int life = 0;
+    public bool isInfinite = false;
+    public string nextScene = "";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,10 +28,23 @@ public class DartGameGestion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(life == 0)
+        Time.timeScale = 3 + point / 100 * 0.20f;
+        if (life == 0)
         {
-            lose();
+            if (isInfinite)
+            {
+                loseInfinite();
+            }
+            else
+            {
+                loseWinNormal();
+            }
+                
             return;
+        }
+        if(point > 500 && !isInfinite)
+        {
+            loseWinNormal();
         }
         for (int i = 0; i < isUsable.Length; i++)
         {
@@ -70,8 +86,16 @@ public class DartGameGestion : MonoBehaviour
         isUsable[usable] = false;
     }
 
-    private void lose()
+    private void loseInfinite()
     {
+        Time.timeScale = 1;
+        LeaderBoardGestions.activateLeaderBoardNotTime("Dart", point);
+    }
 
+
+    private void loseWinNormal()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(nextScene);
     }
 }
