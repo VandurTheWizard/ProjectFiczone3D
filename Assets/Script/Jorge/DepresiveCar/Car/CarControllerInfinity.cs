@@ -22,6 +22,9 @@ public class CarControllerInfinity : MonoBehaviour
     
     private float point = 0;
     private bool isAddPoint = true;
+
+    public bool isInfinity = false;
+    public string nextScene = "";
     
     private void Start()
     {
@@ -58,25 +61,43 @@ public class CarControllerInfinity : MonoBehaviour
         }
         int pointa = (int)point;
         textMeshProUGUI.text = "Your point: " + pointa;
-
+        if(pointa > 500 && !isInfinity)
+        {
+            loadNextScene();
+        }
 
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("CarEnemies"))
         {
-            StartCoroutine(wait());
+            if (isInfinity)
+            {
+                loseInfinity();
+            }
+            else
+            {
+                loadNextScene();
+            }
+             
         }
         
     }
 
-    private IEnumerator wait()
+    private void loseInfinity()
     {
         isAddPoint = false;
         Time.timeScale = 1;
-        yield return new WaitForSeconds(1);
         Cursor.lockState = CursorLockMode.None;
-        LeaderBoardGestions.activateLeaderBoardNotTime("DepresiveCar", (int)point);
+        LeaderBoardGestions.activateLeaderBoardNotTime("dd", (int)point);
 
+    }
+
+    private void loadNextScene()
+    {
+        isAddPoint = false;
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        RandomGameController.loadScene(nextScene);
     }
 }

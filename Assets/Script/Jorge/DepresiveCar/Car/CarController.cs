@@ -15,14 +15,12 @@ public class CarControlller : MonoBehaviour
     private float time = 0;
     private float maxTime = 10;
 
-    private ControllerGame controller;
     private bool isLose = false;
     
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         firstValueX = transform.position.x;
-        controller = GameObject.FindAnyObjectByType<ControllerGame>();
     }
     private void OnMove(InputValue value)
     {
@@ -47,7 +45,6 @@ public class CarControlller : MonoBehaviour
         if(time > maxTime && !isLose)
         {
             Cursor.lockState = CursorLockMode.None;
-            controller.Victory();
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -64,6 +61,5 @@ public class CarControlller : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Cursor.lockState = CursorLockMode.None;
-        controller.Lose(); 
     }
 }
