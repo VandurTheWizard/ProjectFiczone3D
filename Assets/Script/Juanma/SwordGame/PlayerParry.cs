@@ -16,7 +16,6 @@ public class PlayerParry : MonoBehaviour
 
     public bool IsChargingParry => isCharging;
     public Animator animatorParry;
-    public Animator SwordParry;
 
 
     public void OnParry(InputAction.CallbackContext context)
@@ -55,7 +54,6 @@ public class PlayerParry : MonoBehaviour
     void PerformParry()
     {
         animatorParry.SetTrigger("Parry");
-        SwordParry.SetTrigger("Parry");
         canParry = false;
         GameObject parryEffect = Instantiate(parryEffectPrefab, parrySpawnPoint.position, Quaternion.identity);
         Destroy(parryEffect, 0.5f);
