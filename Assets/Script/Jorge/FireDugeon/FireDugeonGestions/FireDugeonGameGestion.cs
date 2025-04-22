@@ -10,14 +10,28 @@ public class FireDugeonGameGestion : MonoBehaviour
 
     public TextMeshProUGUI text;
 
-    private string up = " \u2191";
-    private string down = " \u2193";
-    private string left = "\u2190";
-    private string right = " \u2192";
+    private string up = "m";
+    private string down = ",";
+    private string left = "b";
+    private string right = "n";
+    private string upRight = "c";
+    private string upLeft = "v";
+    private string downLeft = "x";
+    private string downRight = "z";
+
+    const int UP = 0;
+    const int DOWN = 1;
+    const int LEFT = 2;
+    const int RIGHT = 3;
+    const int UPLEFT = 4;
+    const int UPRIGHT = 5;
+    const int DOWNLEFT = 6;
+    const int DOWNRIGHT = 7;
 
     public const int timePlay = 8;
     private const int maxTime = 10;
     private float time = 0;
+    private int hardStyle = 0;
 
     public bool isInfinity = false;
 
@@ -27,31 +41,29 @@ public class FireDugeonGameGestion : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hardStyle = 1 + (int)((Time.timeScale - 1) / 0.75);
         player = FindAnyObjectByType<FireDugeonController>();
         getPosition();
+        
     }
 
 
 
     private void getPosition()
     {
-        const int UP = 0;
-        const int DOWN = 1;
-        const int LEFT = 2;
-        const int RIGHT = 3;
 
-        string movement = "SafeZone: ";
+
+        string movement = "";
 
         int x = 0;
 
         int positionX = 2;
         int positionY = 2;
-
-        int dificult = 2 + (int)(Time.timeScale / 0.25);
+        int dificult = 2 + (int)(Time.timeScale / 0.25) - hardStyle;
         while (x < dificult)
         {
             string addText = "";
-            switch (Random.Range(0, 4))
+            switch (nextNumber(positionX, positionY))
             {
                 case UP:
                     positionY--;
@@ -72,24 +84,34 @@ public class FireDugeonGameGestion : MonoBehaviour
                     positionX++;
                     addText = right;
                     break;
+                case UPLEFT:
+                    positionX--;
+                    positionY--;
+                    addText = upLeft;
+                    hardStyle--;
+                    break;
+                case UPRIGHT:
+                    positionX++;
+                    positionY--;
+                    addText = upRight;
+                    hardStyle--;
+                    break;
+                case DOWNLEFT:
+                    positionX--;
+                    positionY++;
+                    addText = downLeft;
+                    hardStyle--;
+                    break;
+                case DOWNRIGHT:
+                    positionX++;
+                    positionY++;
+                    addText = downRight;
+                    hardStyle--;
+                    break;
+
             }
-            if (positionX < 0 || positionX > 4 || positionY < 0 || positionY > 4)
-            {
-                if (positionX < 0 || positionX > 4)
-                {
-                    positionX = (positionX < 0) ? 0 : 4;
-                }
-                else
-                {
-                    positionY = (positionY < 0) ? 0 : 4;
-                }
-            }
-            else
-            {
-                Debug.Log(positionX +"," +positionY );
                 x++;
-                movement += addText + " ";
-            }
+                movement += addText + "";
         }
 
         text.text = movement;
@@ -98,6 +120,40 @@ public class FireDugeonGameGestion : MonoBehaviour
 
     }
     
+    private int nextNumber(int positionX, int positionY)
+    {
+        int x = 0;
+        while (true)
+        {
+            if (hardStyle > 0)
+            {
+                x = Random.Range(0, 8);
+            }
+            else
+            {
+                x = Random.Range(0, 4);
+            }
+            if (positionX == 0 && (x == LEFT || x == UPLEFT || x == DOWNLEFT))
+            {
+                continue;
+            }
+            if (positionX == 4 && (x == RIGHT || x == UPRIGHT || x == DOWNRIGHT))
+            {
+                continue;
+            }
+            if (positionY == 0 && (x == UP || x == UPLEFT || x == UPRIGHT))
+            {
+                continue;
+            }
+            if (positionY == 4 && (x == DOWN || x == DOWNLEFT || x == DOWNRIGHT))
+            {
+                continue;
+            }
+
+            return x;
+        }
+    }
+
     private void Update()
     {
         time += Time.deltaTime / Time.timeScale;
@@ -119,11 +175,11 @@ public class FireDugeonGameGestion : MonoBehaviour
             {
                 if (player.touchFireFloor)
                 {
-
+                    RandomGameController.loadScene(nextScene);
                 }
                 else
                 {
-
+                    RandomGameController.loadScene(nextScene);
                 }
             }
         }

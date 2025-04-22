@@ -11,7 +11,7 @@ public class RandomGameController : MonoBehaviour
 
     private static List<int> bufferScenes = new List<int>();
     private static string mainScene = "ModeRandom";
-    private static string mainMenu = "Menu";
+    private static string mainMenu = "MainMenu";
     private const int maxGame = 5;
     public void Start()
     {

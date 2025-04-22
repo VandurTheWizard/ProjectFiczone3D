@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Drawing;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
 {
@@ -53,7 +51,7 @@ public class CarController : MonoBehaviour
         time += Time.deltaTime / Time.timeScale;
         if (isAddPoint)
         {
-            point += Time.deltaTime * 10;
+            point += Time.deltaTime * 10 * (int)(Time.timeScale / 0.05) ;
         }
         if (time > maxTime)
         {
@@ -62,7 +60,7 @@ public class CarController : MonoBehaviour
         }
         int pointa = (int)point;
         textMeshProUGUI.text = "Your point: " + pointa;
-        if (pointa > 500 && !isInfinity)
+        if (pointa > 10000 && !isInfinity)
         {
             loadNextScene();
         }

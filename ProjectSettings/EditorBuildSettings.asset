@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Jorge/SootingGun.unity
     guid: ad805072088932c48a594d1efbb45660
   - enabled: 1
-    path: Assets/Scenes/Jorge/FireDungeon/FireDungeon.unity
+    path: Assets/Scenes/Jorge/FireDungeon/FireDugeonSelected.unity
     guid: a3ffe3be0b5662a44ae817042355b68c
   - enabled: 1
     path: Assets/Scenes/Jorge/GestionsGame/LeaderBoard.unity
@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jorge/DepresiveCar/DepresiveCarRandomMode.unity
     guid: cd2ae33757154024ebb57e3ede643edc
+  - enabled: 1
+    path: Assets/Scenes/Jorge/FireDungeon/FireDugeonRandom.unity
+    guid: 9c304e11c635cae43abb0745b9876cea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
