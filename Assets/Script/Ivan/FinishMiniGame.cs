@@ -5,8 +5,11 @@ public class FinishMiniGame : MonoBehaviour
 {
     public bool isInfinite = false;
     public AnimacionesFinPartida animacionesFinPartida;
+    private bool isGameFinished = false;
 
     public void Finish(bool isWin){
+        if (isGameFinished) return;
+        isGameFinished = true;
         Debug.Log("Fin del juego: " + (isWin ? "Ganaste" : "Perdiste"));
         if (isWin)
         {
