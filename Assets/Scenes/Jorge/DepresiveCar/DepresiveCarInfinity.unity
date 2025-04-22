@@ -2480,10 +2480,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3638911069809301686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2de0847df739e549b05e922cf2ddfbe, type: 3}
+  m_Script: {fileID: 11500000, guid: d717fd17f11b27e418ea30753b54e5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensivility: 5
+  sensivility: 15
   velocityUp: 5
   textMeshProUGUI: {fileID: 272522809}
   isInfinity: 1

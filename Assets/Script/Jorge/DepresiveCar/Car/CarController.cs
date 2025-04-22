@@ -1,8 +1,11 @@
 using System.Collections;
+using System.Drawing;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-public class CarControlller : MonoBehaviour
+public class CarController : MonoBehaviour
 {
     public int sensivility = 15;
     public int velocityUp = 5;
@@ -13,10 +16,16 @@ public class CarControlller : MonoBehaviour
     private float valueX = 0;
 
     private float time = 0;
-    private float maxTime = 10;
+    private float maxTime = 3;
 
-    private bool isLose = false;
-    
+    public TextMeshProUGUI textMeshProUGUI;
+
+    private float point = 0;
+    private bool isAddPoint = true;
+
+    public bool isInfinity = false;
+    public string nextScene = "";
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,24 +51,54 @@ public class CarControlller : MonoBehaviour
         transform.position = new Vector3(firstValueX + valueX, transform.position.y, transform.position.z + velocityUp * Time.deltaTime);
 
         time += Time.deltaTime / Time.timeScale;
-        if(time > maxTime && !isLose)
+        if (isAddPoint)
         {
-            Cursor.lockState = CursorLockMode.None;
+            point += Time.deltaTime * 10;
         }
+        if (time > maxTime)
+        {
+            time = 0;
+            Time.timeScale += 0.05f;
+        }
+        int pointa = (int)point;
+        textMeshProUGUI.text = "Your point: " + pointa;
+        if (pointa > 500 && !isInfinity)
+        {
+            loadNextScene();
+        }
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("CarEnemies"))
         {
-            isLose = true;
-            StartCoroutine(wait());
+            if (isInfinity)
+            {
+                loseInfinity();
+            }
+            else
+            {
+                loadNextScene();
+            }
+
         }
-        
+
     }
 
-    private IEnumerator wait()
+    private void loseInfinity()
     {
-        yield return new WaitForSeconds(1);
+        isAddPoint = false;
+        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
+        LeaderBoardGestions.activateLeaderBoardNotTime("dd", (int)point);
+
+    }
+
+    private void loadNextScene()
+    {
+        isAddPoint = false;
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        RandomGameController.loadScene(nextScene);
     }
 }
