@@ -4,16 +4,31 @@ public class LaserSpawner : MonoBehaviour
 {
     public GameObject laserPrefab;
     public int laserCount = 5;
-    public float minY = -10f;
-    public float maxY = 10f;
+    public float minY = -150f;
+    public float maxY = 150f;
     public float minSpacing = 2.5f;
+
+    public bool autoCalculateHeight = false; // Activar en modo infinito
+    public bool isParent = true;
+
+    private static float lastMinY = -150f;
+    private static float lastMaxY = 150f;
 
     void Start()
     {
+        if (autoCalculateHeight && !isParent)
+        {
+            minY = lastMinY - 300f;
+            maxY = lastMaxY - 300f;
+
+            lastMinY = minY;
+            lastMaxY = maxY;
+        }
+
         SpawnAllLasers();
     }
 
-    void SpawnAllLasers()
+    public void SpawnAllLasers()
     {
         float[] usedHeights = new float[laserCount];
 
@@ -31,7 +46,6 @@ public class LaserSpawner : MonoBehaviour
             usedHeights[i] = newY;
 
             Vector3 spawnPos = new Vector3(0, newY, 0);
-
             Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 90f);
 
             GameObject laser = Instantiate(laserPrefab, spawnPos, rotation);
