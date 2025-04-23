@@ -2037,6 +2037,7 @@ MonoBehaviour:
   heart1: {fileID: 2068032224}
   heart2: {fileID: 1402205789}
   heart3: {fileID: 487905451}
+  nextScene: ModeRandom
 --- !u!1001 &957504317
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class HealthManager : MonoBehaviour
     public GameObject fill;
     public GameObject heart1, heart2, heart3;
 
+    public string nextScene = "";
+
     private void Awake()
     {
         if (instance == null)
@@ -84,6 +86,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             Debug.Log("Game Over! El jugador ha sido derrotado.");
+            loadNextScene();
             Time.timeScale = 0;
         }
     }
@@ -94,7 +97,15 @@ public class HealthManager : MonoBehaviour
         {
             fill.SetActive(false);
             Debug.Log("¡Victoria! Has derrotado al dragón.");
+            loadNextScene();
             Time.timeScale = 0;
         }
+    }
+
+    public void loadNextScene()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        RandomGameController.loadScene(nextScene);
     }
 }
