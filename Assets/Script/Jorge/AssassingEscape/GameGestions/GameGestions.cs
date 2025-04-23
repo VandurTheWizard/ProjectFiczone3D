@@ -26,14 +26,14 @@ public class GameGestions : MonoBehaviour
         }
         if (ninjaFind == ninjas)
         {
-            RandomGameController.loadScene("nextScene");
+            RandomGameController.loadScene(nextScene);
         }
 
         time += Time.deltaTime / Time.timeScale;
 
         if(time > maxTime)
         {
-            RandomGameController.loadScene("nextScene");
+            RandomGameController.loadScene(nextScene);
         }
         
     }
