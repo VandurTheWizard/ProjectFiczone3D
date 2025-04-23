@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
         transform.position = posCenter.transform.position;
     }
 
-    public void OnDodgeLeft(InputAction.CallbackContext context)
+    public void OnDodgeLeft()
     {
-        if (context.performed) // Solo ejecuta cuando la acción se completa
+        if (Time.timeScale == 0)
         {
-            Vector3 currentPosition = transform.position;
+            return;
+        }
+        Vector3 currentPosition = transform.position;
 
             if (Vector3.Distance(currentPosition, posCenter.transform.position) < threshold)
             {
@@ -26,14 +28,15 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = posCenter.transform.position;
             }
-        }
     }
 
-    public void OnDodgeRight(InputAction.CallbackContext context)
+    public void OnDodgeRight()
     {
-        if (context.performed)
+        if (Time.timeScale == 0)
         {
-            Vector3 currentPosition = transform.position;
+            return;
+        }
+        Vector3 currentPosition = transform.position;
 
             if (Vector3.Distance(currentPosition, posCenter.transform.position) < threshold)
             {
@@ -44,5 +47,4 @@ public class PlayerController : MonoBehaviour
                 transform.position = posCenter.transform.position;
             }
         }
-    }
 }
