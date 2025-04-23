@@ -5,33 +5,35 @@ public class GameGestions : MonoBehaviour
     private int ninjas = 3;
     private int ninjaFind = 0;
 
-    private ControllerGame controller;
-
     private float time = 0;
     private float maxTime = 10;
 
     public GameObject[] gameObjects;
+    public string nextScene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enableGame();
-        controller = GameObject.FindAnyObjectByType<ControllerGame>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ninjaFind == ninjas)
+        if (Time.timeScale == 0)
         {
-            controller.Victory();
+            return;
+        }
+        if (ninjaFind == ninjas)
+        {
+            RandomGameController.loadScene("nextScene");
         }
 
         time += Time.deltaTime / Time.timeScale;
 
         if(time > maxTime)
         {
-            controller.Lose();
+            RandomGameController.loadScene("nextScene");
         }
         
     }

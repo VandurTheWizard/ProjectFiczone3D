@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyNinjaScript : MonoBehaviour
@@ -22,11 +23,14 @@ public class EnemyNinjaScript : MonoBehaviour
         playerPosition = Camera.main.transform.position;
         animator = GetComponent<Animator>();
         animator.Play("Move");
-
     }
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {   
+            return;
+        }
         if (isDie)
         {
             return;

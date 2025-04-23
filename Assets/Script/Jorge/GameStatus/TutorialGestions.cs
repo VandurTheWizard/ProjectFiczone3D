@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,8 @@ public class TutorialGestions : MonoBehaviour
     private static string lastScene = "";
 
     public GameObject panel;
+
+    private Coroutine coroutine;
 
     private void Awake()
     {
@@ -30,7 +33,22 @@ public class TutorialGestions : MonoBehaviour
             panel.SetActive(true);
         }
         lastScene = actualScene.name;
+       coroutine = StartCoroutine(getCursor());
         
+    }
+
+    private IEnumerator getCursor()
+    {
+        while (true)
+        {
+            if(Cursor.lockState != CursorLockMode.None)
+            {
+                cursorStatus = Cursor.lockState;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+
     }
     public void setConfiguration(float scaleTime, CursorLockMode statusCursor)
     {
@@ -42,6 +60,7 @@ public class TutorialGestions : MonoBehaviour
 
     public void desactiveTutorial()
     {
+        StopCoroutine(coroutine);
         Time.timeScale = bufferTimeScale;
         Cursor.lockState = cursorStatus;
         isTutorialGestionEnable = false;

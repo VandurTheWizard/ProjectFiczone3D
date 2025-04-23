@@ -1,4 +1,5 @@
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,14 +29,39 @@ public class CarController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         firstValueX = transform.position.x;
+        StartCoroutine(isPointEnable());
     }
     private void OnMove(InputValue value)
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         VectorValue = value.Get<Vector2>();
+    }
+
+    private IEnumerator isPointEnable()
+    {
+        while (true) {
+            if (Time.deltaTime == 0)
+            {
+                textMeshProUGUI.gameObject.SetActive(false);
+            }
+            else
+            {
+                textMeshProUGUI.gameObject.SetActive(true);
+            }
+            yield return new WaitForSecondsRealtime(0.1f);
+
+        }
     }
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         valueX += sensivility * VectorValue.x * Time.deltaTime;
         if (valueX > 0)
         {

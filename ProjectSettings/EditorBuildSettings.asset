@@ -12,14 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Jorge/StartScene.unity
     guid: 1ef469cbd0da5a44a8ba423583b31cc6
   - enabled: 1
-    path: Assets/Scenes/Jorge/AssassingScape/AssassingEscape.unity
+    path: Assets/Scenes/Jorge/AssassingScape/AssassingEscapeRandom.unity
     guid: 0cd46107c41e611428a303295f27a0f9
   - enabled: 1
     path: Assets/Scenes/Jorge/SootingGun.unity
     guid: ad805072088932c48a594d1efbb45660
-  - enabled: 1
-    path: Assets/Scenes/Jorge/FireDungeon/FireDugeonSelected.unity
-    guid: a3ffe3be0b5662a44ae817042355b68c
   - enabled: 1
     path: Assets/Scenes/Jorge/GestionsGame/LeaderBoard.unity
     guid: 0ba923920a174274e9d12e7f3c38ecac
