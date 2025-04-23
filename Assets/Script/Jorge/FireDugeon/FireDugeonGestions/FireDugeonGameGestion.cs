@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -41,18 +42,35 @@ public class FireDugeonGameGestion : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        hardStyle = 1 + (int)((Time.timeScale - 1) / 0.75);
+       
         player = FindAnyObjectByType<FireDugeonController>();
-        getPosition();
-        
+        StartCoroutine(getPosition());
+        StartCoroutine(disableText());
     }
 
-
-
-    private void getPosition()
+    private IEnumerator disableText()
     {
+        while (true)
+        {
 
+            Debug.Log("fas");
+            if (Time.timeScale == 0) {
+                text.gameObject.SetActive(false);
+            }
+            else
+            {
+                text.gameObject.SetActive(true);
+            }
 
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+    }
+   
+    private IEnumerator getPosition()
+    {
+        while(Time.timeScale == 0) yield return new WaitForSeconds(0.1f);
+
+        hardStyle = 1 + (int)((Time.timeScale - 1) / 0.75);
         string movement = "";
 
         int x = 0;
@@ -156,7 +174,13 @@ public class FireDugeonGameGestion : MonoBehaviour
 
     private void Update()
     {
-        time += Time.deltaTime / Time.timeScale;
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
+            time += Time.deltaTime / Time.timeScale;
+        
 
         if (time > maxTime)
         {

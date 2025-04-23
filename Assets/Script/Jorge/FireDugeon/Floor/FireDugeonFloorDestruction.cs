@@ -7,7 +7,12 @@ public class FireDugeonFloorDestruction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         time += Time.deltaTime / Time.timeScale;
+
 
         if (time > FireDugeonGameGestion.timePlay)
         {
