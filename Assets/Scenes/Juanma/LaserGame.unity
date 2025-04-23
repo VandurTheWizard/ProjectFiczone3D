@@ -2853,7 +2853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8e63aa96f82734ea9ec8905096c3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInfinite: 1
+  isInfinite: 0
+  nextScene: ModeRandom
   cilindro: {fileID: 8865996727785287012, guid: 915221af20fe436459f7bd5f2a39759f, type: 3}
   Win: {fileID: 319288090}
 --- !u!4 &1650470789
@@ -3523,6 +3524,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bbcff780-0ecf-4c17-ab5d-f1ed9ada5a61
     m_ActionName: 'Player/MovimientoRaton[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1951b1fe-42df-47b4-a444-309f8b5bc7bb
+    m_ActionName: 'Player/PauseMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3569,6 +3574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTracking: 0
   metrosText: {fileID: 81603459}
+  infiniteMode: {fileID: 1650470788}
 --- !u!4 &2061314674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c4db895dcdaa81844b2c0c06fac6e98a, type: 3}
