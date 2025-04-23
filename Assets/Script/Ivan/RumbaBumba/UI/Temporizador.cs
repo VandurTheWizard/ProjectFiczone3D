@@ -21,13 +21,12 @@ public class Temporadizador : MonoBehaviour
     {
         tiempoRestante -= Time.deltaTime;
 
-        if(tiempoRestante <= 0f && !timeIsOver){
-            timeIsOver = true;
+        if(tiempoRestante <= 0f){
             tiempoRestante = 0f;
             gestionRumba.FinTiempo();
-        }   
-
-        textMesh.text = (int)tiempoRestante + "";
+        }else{
+            textMesh.text = (int)tiempoRestante + "";
+        }
     }
 
     public void TiempoRestante(float tiempoRestante){

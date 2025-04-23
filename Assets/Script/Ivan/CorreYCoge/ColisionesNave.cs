@@ -4,18 +4,20 @@ public class ColisionesNave : MonoBehaviour
 {
 
     private GestionCorreYCoge gestionCorreYCoge;
+    private MovimientoCorreYCoge movimientoCorreYCoge;
 
     void Start()
     {
         gestionCorreYCoge = FindFirstObjectByType<GestionCorreYCoge>();
+        movimientoCorreYCoge = GetComponent<MovimientoCorreYCoge>();
     } 
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Trash"))
+        if (collision.gameObject.CompareTag("Trash"))
         {
             gestionCorreYCoge.PerderNivel();
-            Destroy(gameObject);
+            movimientoCorreYCoge.isLose = true;
         }
     }
 }

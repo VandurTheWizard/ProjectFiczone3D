@@ -20,8 +20,7 @@ public class TemporizadorSupervivencia : MonoBehaviour
     {
         tiempoRestante -= Time.deltaTime;
 
-        if(tiempoRestante <= 0f && !timeIsOver){
-            timeIsOver = true;
+        if(tiempoRestante <= 0f){
             tiempoRestante = 0f;
             gestionCorreYCoge.GanarNivel();
         }else{

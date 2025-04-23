@@ -10,6 +10,8 @@ public class GestionCorreYCoge : MonoBehaviour
     private TemporizadorSupervivencia temporizador;
     private FinishMiniGame finishMiniGame;
 
+    private bool isLose = false;
+
     void Start()
     {
         if (FindObjectsByType<GestionCorreYCoge>(FindObjectsSortMode.None).Length > 1)
@@ -48,6 +50,9 @@ public class GestionCorreYCoge : MonoBehaviour
     }
 
     public void PerderNivel(){
+        if (isLose) return;
+        
+        isLose = true;
         finishMiniGame.Finish(false);
         Invoke("DestruirGestionCorreYCoge", 2.5f);
     }
