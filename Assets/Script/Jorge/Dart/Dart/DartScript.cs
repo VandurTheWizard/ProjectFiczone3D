@@ -27,7 +27,7 @@ public class DartScript : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (isAttack)
+        if (isAttack || Time.timeScale == 0)
         {
             return;
         }
@@ -50,6 +50,10 @@ public class DartScript : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
         if (!isPress)
         {
             isPress = true;
@@ -73,6 +77,10 @@ public class DartScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         transform.LookAt(positions[goingTo]);
         transform.Rotate(0, 90, 0);
 

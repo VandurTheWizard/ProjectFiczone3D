@@ -22,13 +22,22 @@ public class DartGameGestion : MonoBehaviour
     {
         nextDart();
         isUsable = new bool[goodChain.Length];
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = 3 + point / 100 * 0.20f;
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        else
+        {
+            Time.timeScale = 3 + point / 100 * 0.20f;
+        }
+           
         if (life == 0)
         {
             if (isInfinite)

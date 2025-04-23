@@ -22,7 +22,10 @@ public class CameraMovement : MonoBehaviour
 
     private void OnLook(InputValue input)
     {
-
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         Vector2 mousePosition = input.Get<Vector2>();
 
         Vector2 position = Mouse.current.position.ReadValue();
@@ -51,6 +54,10 @@ public class CameraMovement : MonoBehaviour
 
     private void OnAttack()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = cameraMain.ScreenPointToRay(mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, laserDistance))

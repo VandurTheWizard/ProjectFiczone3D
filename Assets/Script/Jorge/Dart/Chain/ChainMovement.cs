@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static System.Collections.Specialized.BitVector32;
 
 public class ChainMovement : MonoBehaviour
 {
@@ -25,6 +23,10 @@ public class ChainMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         time += Time.deltaTime;
         if (isUp)
         {

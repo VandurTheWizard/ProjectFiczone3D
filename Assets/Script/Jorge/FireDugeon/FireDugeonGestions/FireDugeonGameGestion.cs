@@ -56,13 +56,15 @@ public class FireDugeonGameGestion : MonoBehaviour
             Debug.Log("fas");
             if (Time.timeScale == 0) {
                 text.gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.9f);
             }
             else
             {
                 text.gameObject.SetActive(true);
+               
             }
 
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
    
