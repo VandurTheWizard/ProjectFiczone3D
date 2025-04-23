@@ -22,6 +22,10 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         currentTime -= Time.deltaTime;
         currentTime = Mathf.Clamp(currentTime, 0f, maxTime);
 
