@@ -21,7 +21,8 @@ public class Temporadizador : MonoBehaviour
     {
         tiempoRestante -= Time.deltaTime;
 
-        if(tiempoRestante <= 0f){
+        if(tiempoRestante <= 0f && timeIsOver){
+            timeIsOver = true;
             tiempoRestante = 0f;
             gestionRumba.FinTiempo();
         }else{

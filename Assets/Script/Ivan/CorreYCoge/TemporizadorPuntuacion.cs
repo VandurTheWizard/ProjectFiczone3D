@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-public class TemporizadorSupervivencia : MonoBehaviour
+public class TemporizadorPuntuacion : MonoBehaviour
 {
-    public float tiempoRestante = 10f;
+    public float tiempoPuntuacion = 10f;
     public TextMeshProUGUI textMesh;
     private GestionCorreYCoge gestionCorreYCoge;
     private bool timeIsOver = false;
@@ -18,21 +18,17 @@ public class TemporizadorSupervivencia : MonoBehaviour
 
     void Update()
     {
-        tiempoRestante -= Time.deltaTime;
+        if(timeIsOver) return;
+        tiempoPuntuacion += Time.deltaTime;
 
-        if(tiempoRestante <= 0f && !timeIsOver){
-            timeIsOver = true;
-            tiempoRestante = 0f;
-            gestionCorreYCoge.GanarNivel();
-        }else{
-            textMesh.text = (int)tiempoRestante + "";
-        }
+        
+        textMesh.text = (int)tiempoPuntuacion + "";
 
         
     }
 
     public void TiempoRestante(float tiempoRestante){
-        this.tiempoRestante = tiempoRestante;
+        this.tiempoPuntuacion = tiempoRestante;
     }
 
     public void PararTemporizador(){

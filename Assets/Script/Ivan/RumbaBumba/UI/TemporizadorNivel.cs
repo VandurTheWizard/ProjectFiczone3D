@@ -1,16 +1,16 @@
 using UnityEngine;
 using TMPro;
 
-public class TemporizadorSupervivencia : MonoBehaviour
+public class TemporizadorNivel : MonoBehaviour
 {
-    public float tiempoRestante = 10f;
+    public float tiempoRestante = 60f;
     public TextMeshProUGUI textMesh;
-    private GestionCorreYCoge gestionCorreYCoge;
+    private GestionRumbaNivel gestionRumba;
     private bool timeIsOver = false;
 
     void Start()
     {
-        gestionCorreYCoge = FindFirstObjectByType<GestionCorreYCoge>();
+        gestionRumba = FindFirstObjectByType<GestionRumbaNivel>();
         if(textMesh == null){
             textMesh = GetComponent<TextMeshProUGUI>();
         }   
@@ -20,15 +20,12 @@ public class TemporizadorSupervivencia : MonoBehaviour
     {
         tiempoRestante -= Time.deltaTime;
 
-        if(tiempoRestante <= 0f && !timeIsOver){
-            timeIsOver = true;
+        if(tiempoRestante <= 0f){
             tiempoRestante = 0f;
-            gestionCorreYCoge.GanarNivel();
+            gestionRumba.FinTiempo();
         }else{
             textMesh.text = (int)tiempoRestante + "";
         }
-
-        
     }
 
     public void TiempoRestante(float tiempoRestante){

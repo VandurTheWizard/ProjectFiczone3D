@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Jorge/GestionsGame/LeaderBoard.unity
     guid: 0ba923920a174274e9d12e7f3c38ecac
   - enabled: 1
-    path: Assets/Scenes/Ivan/RumbaBumba.unity
+    path: Assets/Scenes/Ivan/RumbaBumbaInfinito.unity
     guid: b89c61cdbf1a17b48a2a00cca65a3985
   - enabled: 1
     path: Assets/Scenes/Jorge/DartDugeon/DartDugeonRandomMode.unity
