@@ -6,7 +6,7 @@ public class DecalClicker : MonoBehaviour
     private Camera mainCamera;
     private DecalGenerator decalGenerator;
     private Timer timer;
-    
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -26,6 +26,9 @@ public class DecalClicker : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     Debug.Log("¡Decal Clicked!");
+                    Vector3 screenPos = Mouse.current.position.ReadValue();
+                    GameObject popup = Instantiate(UIManagerScanner.Instance.pointsPopupPrefab, UIManagerScanner.Instance.mainCanvas.transform);
+                    popup.transform.position = screenPos;
                     ScoreManager.Instance.AddPoints(10); 
                     decalGenerator.SpawnDecals();
                     timer.AddTime(0.5f);
