@@ -7,6 +7,7 @@ public class PauseMenuScript : MonoBehaviour
 
     private float bufferTimeScale = 1;
     private CursorLockMode cursorStatus;
+    private bool cursorEnable;
 
     private PlayerInput objetoDeRespaldo;
     public TutorialGestions tutorialObject;
@@ -67,6 +68,8 @@ public class PauseMenuScript : MonoBehaviour
         {
             bufferTimeScale = Time.timeScale;
             cursorStatus = Cursor.lockState;
+            cursorEnable = Cursor.visible;
+            Cursor.visible = true;
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             comprobeIfTutorialExist();
@@ -76,6 +79,7 @@ public class PauseMenuScript : MonoBehaviour
         {
             Time.timeScale = bufferTimeScale;
             Cursor.lockState = cursorStatus;
+            Cursor.visible = cursorEnable;
             panel.SetActive(false);
         }
             
@@ -84,7 +88,7 @@ public class PauseMenuScript : MonoBehaviour
     public void showTheTutorial()
     {
         tutorialObject.gameObject.SetActive(true);
-        tutorialObject.setConfiguration(bufferTimeScale, cursorStatus);
+        tutorialObject.setConfiguration(bufferTimeScale, cursorStatus, cursorEnable);
         panel.SetActive(false);
     }
 
@@ -92,6 +96,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = bufferTimeScale;
         Cursor.lockState = cursorStatus;
+        Cursor.visible = cursorEnable;
         panel.SetActive(false);
     }
 
@@ -99,6 +104,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = cursorEnable;
         SceneManager.LoadScene(mainMenu);
         panel.SetActive(false);
     }
