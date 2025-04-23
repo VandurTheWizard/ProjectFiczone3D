@@ -55,6 +55,8 @@ public class LeaderBoardGestions : MonoBehaviour
 
     private static void activate(string gameName, int point, bool isTime)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1;
         leaderBoardData = IOLeaderBoardData.DataCharge(gameName);
         if (leaderBoardData == null)
         {

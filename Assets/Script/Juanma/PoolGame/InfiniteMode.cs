@@ -27,7 +27,7 @@ public class InfiniteMode : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        LeaderBoardGestions.activateLeaderBoardNotTime("dd", (int)point);
+        LeaderBoardGestions.activateLeaderBoardNotTime("PepitoElDeLosPalotes", (int)point);
 
     }
 }

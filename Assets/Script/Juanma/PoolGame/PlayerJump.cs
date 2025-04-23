@@ -17,14 +17,22 @@ public class DivePlayer : MonoBehaviour
         fallTracker.isTracking = false;
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputValue value)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        moveInput = value.Get<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump()
     {
-        if (context.performed && !isFalling)
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        if (!isFalling)
         {
             isFalling = true;
             rb.useGravity = true;
@@ -34,6 +42,10 @@ public class DivePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if (isFalling)
         {
             Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y) * moveSpeed;
