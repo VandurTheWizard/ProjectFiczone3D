@@ -18,9 +18,12 @@ public class TemporizadorPuntuacion : MonoBehaviour
 
     void Update()
     {
-        if(timeIsOver) return;
+        if(timeIsOver){
+            LeaderBoardGestions.activateLeaderBoardNotTime("Aliencito", (int)tiempoPuntuacion);
+            return;
+        } 
         tiempoPuntuacion += Time.deltaTime;
-
+        
         
         textMesh.text = (int)tiempoPuntuacion + "";
 
