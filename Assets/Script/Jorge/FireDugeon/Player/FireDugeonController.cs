@@ -9,19 +9,20 @@ public class FireDugeonController : MonoBehaviour
 
     Animator animator;
 
-    Rigidbody rb;
-
     float time = 0;
 
     public bool touchFireFloor = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
-         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         time += Time.deltaTime / Time.timeScale;
         {
             if (movement == Vector2.zero || time > FireDugeonGameGestion.timePlay)
@@ -46,7 +47,15 @@ public class FireDugeonController : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-       movement = value.Get<Vector2>();
+        if(Time.timeScale == 0)
+        {
+            movement = Vector2.zero;
+        }
+        else
+        {
+            movement = value.Get<Vector2>();
+        }
+           
     }
 
 
