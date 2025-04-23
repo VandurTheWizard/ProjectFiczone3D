@@ -23,6 +23,7 @@ public class DragonAttack : MonoBehaviour
     {
         while (true)
         {
+
             if (attackCounter < 10)
             {
                 int attackType = Random.Range(0, 3); // 0 = Normal, 1 = Mediano

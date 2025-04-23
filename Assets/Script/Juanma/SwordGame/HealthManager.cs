@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
+using System.Collections;
 
 public class HealthManager : MonoBehaviour
 {
@@ -19,6 +21,11 @@ public class HealthManager : MonoBehaviour
 
     public string nextScene = "";
 
+    public TextMeshProUGUI textPlayer;
+    public TextMeshProUGUI textDrako;
+    public GameObject img1;
+    public GameObject img2;
+
     private void Awake()
     {
         if (instance == null)
@@ -29,12 +36,67 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1;
         enemyHealth = fullEnemyHealth;
         if (dragonSlider != null)
             dragonSlider.maxValue = fullEnemyHealth;
         UpdateUI();
+        StartCoroutine(disableText());
     }
+
+    private IEnumerator disableText()
+    {
+        while (true)
+        {
+
+            if (Time.timeScale == 0)
+            {
+                    textPlayer.gameObject.SetActive(false);
+                    textDrako.gameObject.SetActive(false);
+                    img1.SetActive(false);
+                    img2.SetActive(false);
+                    heart1.SetActive(false);
+                    heart2.SetActive(false);
+                    heart3.SetActive(false);
+                    yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                textPlayer.gameObject.SetActive(true);
+                textDrako.gameObject.SetActive(true);
+                img1.SetActive(true);
+                img2.SetActive(true);
+                switch (playerHealth)
+                {
+                    case 0:
+                        heart1.SetActive(false);
+                        heart2.SetActive(false);
+                        heart3.SetActive(false);
+                        break;
+                    case 1:
+                        heart1.SetActive(true);
+                        heart2.SetActive(false);
+                        heart3.SetActive(false);
+                        break;
+                    case 2:
+                        heart1.SetActive(true);
+                        heart2.SetActive(true);
+                        heart3.SetActive(false);
+                        break;
+                    case 3:
+                        heart1.SetActive(true);
+                        heart2.SetActive(true);
+                        heart3.SetActive(true);
+                        break;
+
+                }
+
+            }
+
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+    }
+
+
 
     public void DamagePlayer(int damage)
     {

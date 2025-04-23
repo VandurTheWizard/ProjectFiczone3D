@@ -17,9 +17,13 @@ public class PlayerAttack : MonoBehaviour
         playerParry = GetComponent<PlayerParry>();
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack()
     {
-        if (context.performed && canAttack && !playerParry.IsChargingParry)
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        if (canAttack && !playerParry.IsChargingParry)
         {
             Attack();
         }

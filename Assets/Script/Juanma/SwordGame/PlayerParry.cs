@@ -18,27 +18,30 @@ public class PlayerParry : MonoBehaviour
     public Animator animatorParry;
 
 
-    public void OnParry(InputAction.CallbackContext context)
+    public void OnParry()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if (!canParry) return;
 
-        if (context.started)
-        {
             isCharging = true;
             chargeTime = 0f;
-        }
-        else if (context.canceled)
-        {
+
             if (chargeTime >= minChargeTime)
             {
                 PerformParry();
             }
-            isCharging = false;
-        }
+
     }
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if (isCharging)
         {
             chargeTime += Time.deltaTime;
