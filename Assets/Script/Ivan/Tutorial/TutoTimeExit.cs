@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TutoTimeExit : MonoBehaviour
 {
+
     void Start()
     {
         Time.timeScale = 0f;
