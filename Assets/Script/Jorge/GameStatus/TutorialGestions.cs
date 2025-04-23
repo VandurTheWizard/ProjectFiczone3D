@@ -9,6 +9,8 @@ public class TutorialGestions : MonoBehaviour
     private CursorLockMode cursorStatus;
     public static bool isTutorialGestionEnable = false;
     private static string lastScene = "";
+    private bool cursorVisible = true;
+
 
     public GameObject panel;
 
@@ -20,6 +22,7 @@ public class TutorialGestions : MonoBehaviour
         UnityEngine.SceneManagement.Scene actualScene = SceneManager.GetActiveScene();
         bufferTimeScale = Time.timeScale;
         cursorStatus = Cursor.lockState;
+        cursorVisible = Cursor.visible;
         if (lastScene == actualScene.name)
         {
             isTutorialGestionEnable = false;
@@ -29,6 +32,7 @@ public class TutorialGestions : MonoBehaviour
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             isTutorialGestionEnable = true;
             panel.SetActive(true);
         }
@@ -44,16 +48,19 @@ public class TutorialGestions : MonoBehaviour
             if(Cursor.lockState != CursorLockMode.None)
             {
                 cursorStatus = Cursor.lockState;
+                cursorVisible = Cursor.visible;
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
             yield return new WaitForSecondsRealtime(0.1f);
         }
 
     }
-    public void setConfiguration(float scaleTime, CursorLockMode statusCursor)
+    public void setConfiguration(float scaleTime, CursorLockMode statusCursor, bool isCursorVisible)
     {
         bufferTimeScale = scaleTime;
-        cursorStatus = statusCursor;    
+        cursorStatus = statusCursor;
+        cursorVisible = isCursorVisible;
         isTutorialGestionEnable = true;
         panel.SetActive(true);
     }
@@ -63,6 +70,7 @@ public class TutorialGestions : MonoBehaviour
         StopCoroutine(coroutine);
         Time.timeScale = bufferTimeScale;
         Cursor.lockState = cursorStatus;
+        Cursor.visible = cursorVisible;
         isTutorialGestionEnable = false;
         panel.SetActive(false);
     }
