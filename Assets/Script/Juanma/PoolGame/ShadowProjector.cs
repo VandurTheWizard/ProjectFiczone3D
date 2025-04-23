@@ -8,6 +8,10 @@ public class ShadowProjector : MonoBehaviour
 
     void Update()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
         if (target == null) return;
 
         Ray ray = new Ray(target.position, Vector3.down);

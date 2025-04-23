@@ -18,6 +18,10 @@ public class LaserRotator : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         transform.Rotate(rotationSpeed * Time.deltaTime,0, 0);
     }
 }
