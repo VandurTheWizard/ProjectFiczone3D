@@ -7,6 +7,7 @@ public class FallTracker : MonoBehaviour
     private float metersFallen;
     public bool isTracking = false;
     public TextMeshProUGUI metrosText;
+    public InfiniteMode infiniteMode;
 
     void Start()
     {
@@ -27,6 +28,12 @@ public class FallTracker : MonoBehaviour
     public void StopTracking()
     {
         isTracking = false;
+        if (infiniteMode.isInfinite)
+        {
+            infiniteMode.loseInfinity(metersFallen);
+        } else {
+            infiniteMode.loadNextScene();
+        }
         Debug.Log("Sobreviviste " + Mathf.FloorToInt(metersFallen) + " metros.");
     }
 }

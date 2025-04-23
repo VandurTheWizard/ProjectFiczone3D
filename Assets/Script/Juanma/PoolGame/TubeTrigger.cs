@@ -16,9 +16,5 @@ public class TubeTrigger : MonoBehaviour
         {
             controller.SpawnNextTube(transform.root.position);
         }
-        else
-        {
-            Debug.LogError("InfiniteMode no encontrado o no está activado.");
-        }
     }
 }
