@@ -1,9 +1,7 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Timeline;
 
 public class FireDugeonGameGestion : MonoBehaviour
 {
