@@ -28,7 +28,7 @@ public class GestorPartidaRumba : MonoBehaviour
         Plataforma plataforma = FindFirstObjectByType<Plataforma>();
         if (plataforma != null)
         {
-            plataforma.esFuncional = true;
+            plataforma.SetEsFuncional(true);
         }
     }
 

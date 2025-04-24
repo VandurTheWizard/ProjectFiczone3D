@@ -6,6 +6,7 @@ public class FinishMiniGame : MonoBehaviour
     public bool isInfinite = false;
     public AnimacionesFinPartida animacionesFinPartida;
     private bool isGameFinished = false;
+    public bool isRandom = true;
 
     public void Finish(bool isWin){
         if (isGameFinished) return;
@@ -22,8 +23,8 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void AnimationWin(){
-        animacionesFinPartida.AnimacionGanadora();
-        Invoke("NextLevel", 2f);
+        //animacionesFinPartida.AnimacionGanadora();
+        Invoke("NextLevel", 0);
     }
 
     private void AnimationLose(){
@@ -41,7 +42,7 @@ public class FinishMiniGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cargar escena aleatoria");
+            GestionSheep.winAndGoingNextScene(isRandom);// Si la siguiente es escena es Random o normal
         }
     }
 }

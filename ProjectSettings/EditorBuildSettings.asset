@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ivan/CorreYCogeInfinite.unity
     guid: e6a7a756e6be47a45a11e5c279c7489a
   - enabled: 1
-    path: Assets/Scenes/Ivan/CorreYCoge.unity
+    path: Assets/Scenes/Ivan/CorreYCogeNivel.unity
     guid: 16a9486d31908314ab7da887689b59d7
   - enabled: 1
     path: Assets/Scenes/Ivan/CorreYCogeRandom.unity
