@@ -83,6 +83,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Isa/BurguerGameSelected.unity
     guid: 4400260abedde5f42af59c281f6d477d
+  - enabled: 1
+    path: Assets/Scenes/Juanma/LaserGameInfinity.unity
+    guid: 5cf6daeeef18af34eb20d7c19bdd71fa
+  - enabled: 1
+    path: Assets/Scenes/Juanma/LaserGameRandom.unity
+    guid: b0350f14808d6c2438a0183e47871021
+  - enabled: 1
+    path: Assets/Scenes/Juanma/ScannerGameRandom.unity
+    guid: 8429307ef58ebf24e9227610d220a80c
+  - enabled: 1
+    path: Assets/Scenes/Juanma/SwordGameRandom.unity
+    guid: c52d2571b0ed2144d91e8200d923b529
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
