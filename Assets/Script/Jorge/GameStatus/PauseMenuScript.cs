@@ -104,7 +104,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = cursorEnable;
+        Cursor.visible = true;
         SceneManager.LoadScene(mainMenu);
         panel.SetActive(false);
     }
