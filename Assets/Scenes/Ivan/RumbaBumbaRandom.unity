@@ -7815,7 +7815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1341e7231a3fb0b429014b43021bc0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInfinite: 1
+  isInfinite: 0
   animacionesFinPartida: {fileID: 0}
   isRandom: 1
 --- !u!1001 &2090101683
