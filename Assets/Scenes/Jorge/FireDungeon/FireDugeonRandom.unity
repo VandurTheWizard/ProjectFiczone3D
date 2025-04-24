@@ -2147,7 +2147,7 @@ MonoBehaviour:
   - {fileID: 174651415}
   text: {fileID: 1088582089}
   isInfinity: 0
-  nextScene: ModeRandom
+  isRandom: 0
 --- !u!4 &413273507
 Transform:
   m_ObjectHideFlags: 0

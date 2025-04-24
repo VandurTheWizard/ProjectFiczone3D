@@ -22,20 +22,24 @@ public class TemporizadorPuntuacion : MonoBehaviour
 
     private IEnumerator canvasDisable()
     {
-        if (Time.timeScale == 0)
+        while (true)
         {
-            textMesh.gameObject.SetActive(false);
-            imagen.SetActive(false);
-            text2.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
+            if (Time.timeScale == 0)
+            {
+                textMesh.gameObject.SetActive(false);
+                imagen.SetActive(false);
+                text2.SetActive(false);
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                textMesh.gameObject.SetActive(true);
+                imagen.SetActive(true);
+                text2.SetActive(true);
+            }
+            yield return new WaitForSecondsRealtime(0.1f);
         }
-        else
-        {
-            textMesh.gameObject.SetActive(true);
-            imagen.SetActive(true);
-            text2.SetActive(true);
-        }
-        yield return new WaitForSecondsRealtime(0.1f);
+       
     }
     void Update()
     {

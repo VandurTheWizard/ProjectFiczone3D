@@ -36,7 +36,7 @@ public class FireDugeonGameGestion : MonoBehaviour
 
     public bool isInfinity = false;
 
-    public string nextScene;
+    public bool isRandom;
     private FireDugeonController player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -200,11 +200,11 @@ public class FireDugeonGameGestion : MonoBehaviour
             {
                 if (player.touchFireFloor)
                 {
-                    RandomGameController.loadScene(nextScene);
+                    GestionSheep.winAndGoingNextScene(isRandom);
                 }
                 else
                 {
-                    RandomGameController.loadScene(nextScene);
+                    GestionSheep.loseAndGoingNextScene(isRandom);
                 }
             }
         }

@@ -9,7 +9,7 @@ public class GameGestions : MonoBehaviour
     private float maxTime = 10;
 
     public GameObject[] gameObjects;
-    public string nextScene;
+    public bool isRandom = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,14 +26,14 @@ public class GameGestions : MonoBehaviour
         }
         if (ninjaFind == ninjas)
         {
-            RandomGameController.loadScene(nextScene);
+            GestionSheep.winAndGoingNextScene(isRandom);
         }
 
         time += Time.deltaTime / Time.timeScale;
 
         if(time > maxTime)
         {
-            RandomGameController.loadScene(nextScene);
+            GestionSheep.winAndGoingNextScene(isRandom);
         }
         
     }
