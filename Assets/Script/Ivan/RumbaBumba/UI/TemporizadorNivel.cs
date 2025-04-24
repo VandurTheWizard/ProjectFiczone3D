@@ -16,9 +16,15 @@ public class TemporizadorNivel : MonoBehaviour
         }   
     }
 
+    
     void Update()
     {
-        tiempoRestante -= Time.deltaTime;
+
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+            tiempoRestante -= Time.deltaTime;
         if(timeIsOver) return;
 
         if(tiempoRestante <= 0f){

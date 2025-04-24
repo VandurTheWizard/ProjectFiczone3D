@@ -7411,54 +7411,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 436428, guid: 688f883d732992641b79bb39fa1415c7, type: 3}
   m_PrefabInstance: {fileID: 618864215}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1914479709
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1914479711}
-  - component: {fileID: 1914479710}
-  m_Layer: 0
-  m_Name: TutorialManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1914479710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914479709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df069d108e1568041af7c58f06fdf670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutoriales:
-  - nombreEscena: RumbaBumba
-    objetoTutorial: {fileID: 368475511093688666, guid: 71c356f58daf86a4b8db38a4612f2d1a, type: 3}
-    volverAVer: 0
---- !u!4 &1914479711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914479709}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 980.62244, y: 518.0318, z: 4.994663}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950013105
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,7 +7759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInfinite: 1
   animacionesFinPartida: {fileID: 0}
-  isRandom: 1
+  isRandom: 0
 --- !u!1001 &2090101683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8300,6 +8252,5 @@ SceneRoots:
   - {fileID: 1242741231}
   - {fileID: 601184839}
   - {fileID: 1294416423}
-  - {fileID: 1914479711}
   - {fileID: 871265422}
   - {fileID: 318880283}

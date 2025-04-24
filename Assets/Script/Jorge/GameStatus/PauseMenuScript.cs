@@ -15,7 +15,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject panel;
 
-    private static string mainMenu = "";
+    private static string mainMenu = "MenuSeleccion";
     
 
     private void Awake()

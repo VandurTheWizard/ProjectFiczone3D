@@ -23,6 +23,7 @@ public class RandomGameController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (bufferScenes.Count == maxGame)
         {
+            bufferScenes = new List<int>();
             SceneManager.LoadScene(mainMenu);
         }
         else
