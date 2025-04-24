@@ -7,26 +7,15 @@ public class GestionRumba : MonoBehaviour
     public int nivel = 0;
     public int maximoNivel = 3;
     public float tiempo = 10f;
-    public float tiempoXNivel = 5f;
+    public float tiempoAcomulado = 0;
     private Temporadizador temporizador;
     private FinishMiniGame finishMiniGame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        //Si en la escena ya existe un objeto de tipo GestionRumba, se destruye el nuevo
         if (FindObjectsByType<GestionRumba>(FindObjectsSortMode.None).Length > 1)
         {
-            // El objeto que no es el actual debe llamar a NuevoNivel
-            GestionRumba[] objetosGestionRumba = FindObjectsByType<GestionRumba>(FindObjectsSortMode.None);
-            for (int i = 0; i < objetosGestionRumba.Length; i++)
-            {
-                if (objetosGestionRumba[i] != this)
-                {
-                    objetosGestionRumba[i].NuevoNivel();
-                }
-            }
-
             Destroy(gameObject);
             return;
         }
@@ -37,12 +26,37 @@ public class GestionRumba : MonoBehaviour
         
     }
 
+     void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        DontDestroyOnLoad(gameObject);
+
+        NuevoNivel();
+
+        Debug.Log("Escena cargada: " + scene.name);
+        if (scene.name != "RumbaBumbaInfinito")
+        {
+            Debug.Log("Escena cagada");
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     public void NuevoNivel(){
         basuraManager = FindFirstObjectByType<GeneradorBasura>();
         basuraManager.SetNumeroBasuraDisponible(nivel);
         
         temporizador = FindFirstObjectByType<Temporadizador>();
-        temporizador.TiempoRestante(tiempo + nivel * 5f);
+        temporizador.TiempoRestante(tiempo + tiempoAcomulado);
 
         finishMiniGame = FindFirstObjectByType<FinishMiniGame>();
 
@@ -55,11 +69,13 @@ public class GestionRumba : MonoBehaviour
     public void FinTiempo(){
         LeaderBoardGestions.activateLeaderBoardNotTime("Rumba", nivel);
         finishMiniGame.Finish(false);
-        Invoke("DestruirGestionRumba", 2.5f);
+        
+        Invoke("DestruirGestionRumba", 0);
     }
 
     public void GanarNivel(){
         nivel++;
+        tiempoAcomulado = temporizador.TiempoSobrante();
         finishMiniGame.Finish(true);
     }
 

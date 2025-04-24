@@ -9,8 +9,8 @@ public class MovimientoCorreYCoge : MonoBehaviour
 
     void Start()
     {
+        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     } 
 
     public void OnMoveMouse(InputAction.CallbackContext context)

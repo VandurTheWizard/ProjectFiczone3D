@@ -20,8 +20,9 @@ public class Temporadizador : MonoBehaviour
     void Update()
     {
         tiempoRestante -= Time.deltaTime;
-
-        if(tiempoRestante <= 0f && timeIsOver){
+        if(timeIsOver) return;
+        
+        if(tiempoRestante <= 0f ){
             timeIsOver = true;
             tiempoRestante = 0f;
             gestionRumba.FinTiempo();
@@ -32,6 +33,10 @@ public class Temporadizador : MonoBehaviour
 
     public void TiempoRestante(float tiempoRestante){
         this.tiempoRestante = tiempoRestante;
+    }
+
+    public float TiempoSobrante(){
+        return tiempoRestante;
     }
 
     public void PararTemporizador(){

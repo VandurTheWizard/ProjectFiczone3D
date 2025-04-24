@@ -3881,6 +3881,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bbcff780-0ecf-4c17-ab5d-f1ed9ada5a61
     m_ActionName: 'Player/MovimientoRaton[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1951b1fe-42df-47b4-a444-309f8b5bc7bb
+    m_ActionName: 'Player/PauseMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -4848,7 +4852,7 @@ MonoBehaviour:
   nivel: 0
   maximoNivel: 10
   tiempo: 10
-  tiempoXNivel: 1.5
+  tiempoAcomulado: 0
 --- !u!4 &1294416423
 Transform:
   m_ObjectHideFlags: 0
@@ -7373,7 +7377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4a8966f7e21034182e900d9b531707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoRestante: 45
+  tiempoRestante: 10
   textMesh: {fileID: 0}
 --- !u!114 &2096459933
 MonoBehaviour:
@@ -7699,6 +7703,10 @@ PrefabInstance:
     - target: {fileID: 6272994880748642713, guid: 240b6dd4051652248ac086beb4945650, type: 3}
       propertyPath: m_Name
       value: UIFinishPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272994880748642713, guid: 240b6dd4051652248ac086beb4945650, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6552622430923777335, guid: 240b6dd4051652248ac086beb4945650, type: 3}
       propertyPath: m_Pivot.x
