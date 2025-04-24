@@ -3304,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_text
-      value: Dart Dugeon
+      value: Dart Dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize

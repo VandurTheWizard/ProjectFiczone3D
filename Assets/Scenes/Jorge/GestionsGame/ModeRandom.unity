@@ -504,9 +504,9 @@ MonoBehaviour:
   - DepresiveCarRandomMode
   - DartDugeonRandomMode
   - AssassingEscapeRandom
-  - SwordGame
-  - ScannerGame
-  - LaserGame
+  - SwordGameRandom
+  - ScannerGameRandom
+  - LaserGameRandom
   - CorreYCogeRandom
 --- !u!4 &1003322044
 Transform:
