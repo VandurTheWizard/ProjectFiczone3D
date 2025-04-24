@@ -17,7 +17,11 @@ public class TrashDetector : MonoBehaviour
 
     void Update()
     {
-        if(trashList.Count > 0){
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        if (trashList.Count > 0){
             timer += Time.deltaTime;
             if(timer >= timeToChangeColor){
                 spriteRenderer.color = Color.green; 
