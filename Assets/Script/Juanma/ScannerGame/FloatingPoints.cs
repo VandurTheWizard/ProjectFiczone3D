@@ -17,7 +17,13 @@ public class FloatingPoints : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         transform.Translate(Vector3.up * riseSpeed * Time.deltaTime);
         canvasGroup.alpha -= fadeSpeed * Time.deltaTime;
     }
+
+
 }

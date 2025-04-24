@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1385fd9bdc902614b9495be20e39a120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
+  sensitivity: 50
   minMovementY: -30
   maxMovementY: 30
 --- !u!114 &802124748
@@ -1494,10 +1494,74 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_text
+      value: Los ninjas intentan esconderse de ti, tendras que buscarlos y tocarlos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.43529415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.43921572
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4285493373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.b
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.g
+      value: 0.87843144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9607844
+      objectReference: {fileID: 0}
     - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_Name
       value: CanvasTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_text
+      value: hide and seek
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontSize
+      value: 113.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.46274513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.454902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370975392498217941, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4285953156
+      objectReference: {fileID: 0}
     - target: {fileID: 4611898414750835034, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1593,6 +1657,14 @@ PrefabInstance:
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482201182118794622, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_text
+      value: Encontrar ninja
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482201182118794622, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontSize
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7757609450761382832, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1698,8 +1770,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8880734091809912669, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 231908a7d6917b5418d70403c43bb502, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 117689078196715721, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+    - {fileID: 4211668228546856846, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+    - {fileID: 3230251251284970227, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+    - {fileID: 7559347311662456948, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+    - {fileID: 824820668378527310, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}

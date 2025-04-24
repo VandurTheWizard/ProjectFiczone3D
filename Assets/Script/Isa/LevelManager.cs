@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int currentLevelt=0;
 
 
+    public string nextScene = "";
+
     private float counter;
 
     private void Awake()
@@ -35,8 +37,12 @@ public class LevelManager : MonoBehaviour
         end = true;
         music.Stop();
 
-        
+
+        Cursor.lockState = CursorLockMode.None;
+        RandomGameController.loadScene(nextScene);
+
         Debug.Log("Bara haz lo tuyo. Score: " + finalScore + "Fallos: " + fails);
+        Debug.Log("No soy bara soy pokemon");
     }
 
     private void Start()
@@ -48,6 +54,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.deltaTime == 0)
+        {
+            return;
+        }
         if (!playing)
         {
             if (counter > 0.5)

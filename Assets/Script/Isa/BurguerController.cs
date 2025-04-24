@@ -66,11 +66,20 @@ public class BurguerController : MonoBehaviour
 
     private void Update()
     {
+        if (Time.deltaTime == 0)
+        {
+            return;
+        }
         MoveAlongScreen();
     }
 
     private void OnJump()
     {
+        if (Time.deltaTime == 0)
+        {
+            return;
+        }
+
         if (LevelManager.Instance.playing && canPlay &&!LevelManager.Instance.end)
         {
             GameObject myChild = gameObject.transform.GetChild(0).gameObject;
