@@ -15,7 +15,7 @@ public class DartGameGestion : MonoBehaviour
 
     public int life = 0;
     public bool isInfinite = false;
-    public string nextScene = "";
+    public bool isRandom = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -104,6 +104,14 @@ public class DartGameGestion : MonoBehaviour
 
     private void loseWinNormal()
     {
-        RandomGameController.loadScene(nextScene);
+        if(life == 0)
+        {
+            GestionSheep.loseAndGoingNextScene(isRandom);
+        }
+        else
+        {
+            GestionSheep.winAndGoingNextScene(isRandom);
+        }
+ 
     }
 }
