@@ -7391,7 +7391,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInfinite: 1
-  animacionesFinPartida: {fileID: 0}
   isRandom: 1
 --- !u!1001 &2090101683
 PrefabInstance:
