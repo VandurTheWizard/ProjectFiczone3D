@@ -13,6 +13,7 @@ public class CameraMovement : MonoBehaviour
 
     private Camera cameraMain;
     private GameGestions gameGestions;
+    Vector2 mousePosition;
 
     private void Start()
     {
@@ -20,36 +21,28 @@ public class CameraMovement : MonoBehaviour
         gameGestions = GameObject.FindAnyObjectByType<GameGestions>();
     }
 
-    private void OnLook(InputValue input)
+    private void OnMove(InputValue input)
     {
         if (Time.timeScale == 0)
         {
             return;
         }
-        Vector2 mousePosition = input.Get<Vector2>();
+        mousePosition = input.Get<Vector2>();
 
-        Vector2 position = Mouse.current.position.ReadValue();
+    }
+
+    private void Update()
+    {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         float mouseX = mousePosition.x * sensitivity * (Time.deltaTime / Time.timeScale);
-        int borderMargin = 100;
 
-        Debug.Log(mousePosition.x + "");
-
-        if (position.x < borderMargin && mouseX < 0)
-        {
-            yRotation += mouseX;
-            yRotation = Mathf.Clamp(yRotation, minMovementY, maxMovementY);
-            transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
-            return;
-        }
-
-        if (position.x > Screen.width - borderMargin && mouseX > 0)
-        {
-            yRotation += mouseX;
-            yRotation = Mathf.Clamp(yRotation, minMovementY, maxMovementY);
-            transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
-            return;
-        }
-
+        yRotation += mouseX;
+        yRotation = Mathf.Clamp(yRotation, minMovementY, maxMovementY);
+        transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
     }
 
     private void OnAttack()
