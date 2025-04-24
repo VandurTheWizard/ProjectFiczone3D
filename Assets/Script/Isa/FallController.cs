@@ -116,7 +116,7 @@ public class FallController : MonoBehaviour
                 case 3:
                     containerFail3.SetActive(true);
                     imageFail3.sprite = burguerImage.sprite;
-                    LevelManager.Instance.EndGame();
+                    LevelManager.Instance.EndGame(false);
                     break;
             }
         }

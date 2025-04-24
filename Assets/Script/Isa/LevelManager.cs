@@ -19,10 +19,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int currentBurguer=0;
     [HideInInspector] public int currentLevelt=0;
 
-
-    public string nextScene = "";
-
     private float counter;
+
+    public bool isRandom = false;
 
     private void Awake()
     {
@@ -32,17 +31,22 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector] public int finalScore;
     [HideInInspector] public int fails;
-    public void EndGame()
+    public void EndGame(bool isWin)
     {
         end = true;
         music.Stop();
 
-
-        Cursor.lockState = CursorLockMode.None;
-        RandomGameController.loadScene(nextScene);
-
         Debug.Log("Bara haz lo tuyo. Score: " + finalScore + "Fallos: " + fails);
         Debug.Log("No soy bara soy pokemon");
+        if (isWin)
+        {
+            GestionSheep.winAndGoingNextScene(isRandom);
+        }
+        else
+        {
+            GestionSheep.loseAndGoingNextScene(isRandom);
+        }
+
     }
 
     private void Start()

@@ -31,4 +31,9 @@ public class AnimacionesFinPartida : MonoBehaviour
         pulgar.GetComponent<Image>().sprite = pulgarAbajo;
         animator.Play("Animation");
     }
+
+    public void AnimationWait()
+    {
+        animator.Play("Wait");
+    }
 }

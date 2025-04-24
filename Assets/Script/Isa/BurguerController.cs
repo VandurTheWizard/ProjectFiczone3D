@@ -143,7 +143,7 @@ public class BurguerController : MonoBehaviour
         }
         catch(Exception e)
         {
-            LevelManager.Instance.EndGame();
+            LevelManager.Instance.EndGame(true);
         }
     }
 
