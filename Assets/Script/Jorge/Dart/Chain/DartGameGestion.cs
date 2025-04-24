@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,11 +12,15 @@ public class DartGameGestion : MonoBehaviour
     public GameObject[] badChain;
     private bool[] isUsable;
 
+    public TextMeshProUGUI text;
+
     public int point = 0;
 
     public int life = 0;
     public bool isInfinite = false;
     public bool isRandom = false;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +28,25 @@ public class DartGameGestion : MonoBehaviour
         nextDart();
         isUsable = new bool[goodChain.Length];
         Cursor.lockState = CursorLockMode.Locked;
+        StartCoroutine(isPointEnable());
 
+    }
+
+    private IEnumerator isPointEnable()
+    {
+        while (true)
+        {
+            if (Time.deltaTime == 0)
+            {
+                text.gameObject.SetActive(false);
+            }
+            else
+            {
+                text.gameObject.SetActive(true);
+            }
+            yield return new WaitForSecondsRealtime(0.1f);
+
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +61,7 @@ public class DartGameGestion : MonoBehaviour
             Time.timeScale = 3 + point / 100 * 0.20f;
         }
            
-        if (life == 0)
+        if (life <= 0)
         {
             if (isInfinite)
             {
@@ -70,7 +93,7 @@ public class DartGameGestion : MonoBehaviour
                 }
             }
         }
-
+        text.text = "Tus puntos: " + point + "\nVidas restantes:" + life;
 
     }
 
@@ -104,7 +127,7 @@ public class DartGameGestion : MonoBehaviour
 
     private void loseWinNormal()
     {
-        if(life == 0)
+        if(life <= 0)
         {
             GestionSheep.loseAndGoingNextScene(isRandom);
         }

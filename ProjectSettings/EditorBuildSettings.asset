@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Jorge/GestionsGame/FirstScene.unity
     guid: 668f45f9a252ffc48af4339a3a7c0fb9
   - enabled: 1
-    path: Assets/Scenes/Isa/BurguerGame.unity
+    path: Assets/Scenes/Isa/BurguerGameRandom.unity
     guid: 1323949d2310f7c4ca4ab9f6b3045912
   - enabled: 1
     path: Assets/Scenes/Jorge/StartScene.unity
@@ -59,6 +59,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ivan/CorreYCogeRandom.unity
     guid: cab34ea5abd9ac74e8220943d45d9285
+  - enabled: 1
+    path: Assets/Scenes/Jorge/FireDungeon/FireDugeonInfinity.unity
+    guid: 6fade32e59520fa4ba3cfe2346402b82
+  - enabled: 1
+    path: Assets/Scenes/Jorge/FireDungeon/FireDugeonSelected.unity
+    guid: 01c04a348bd45cb46a0403c59031de38
+  - enabled: 1
+    path: Assets/Scenes/Jorge/DepresiveCar/DepresiveCarSelected.unity
+    guid: d1ea283d5719a4a42a41c5e79fa0d03b
+  - enabled: 1
+    path: Assets/Scenes/Jorge/DepresiveCar/DepresiveCarInfinity.unity
+    guid: aa8e6c1f30023b644b954b23cf816bd5
+  - enabled: 1
+    path: Assets/Scenes/Jorge/DartDugeon/DartDugeonSelected.unity
+    guid: 93f02ce3fd60ed04eae4d1908bcdfbf9
+  - enabled: 1
+    path: Assets/Scenes/Jorge/DartDugeon/DartDugeonInfinity.unity
+    guid: 2b123a35b6582234b8a070bd7f066a2a
+  - enabled: 1
+    path: Assets/Scenes/Jorge/AssassingScape/AssassingEscapeSelected.unity
+    guid: 51722ae8e2c248c43815839432bc47b8
+  - enabled: 1
+    path: Assets/Scenes/Isa/BurguerGameSelected.unity
+    guid: 4400260abedde5f42af59c281f6d477d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

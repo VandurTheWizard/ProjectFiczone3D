@@ -200,11 +200,11 @@ public class FireDugeonGameGestion : MonoBehaviour
             {
                 if (player.touchFireFloor)
                 {
-                    GestionSheep.winAndGoingNextScene(isRandom);
+                    GestionSheep.loseAndGoingNextScene(isRandom);
                 }
                 else
                 {
-                    GestionSheep.loseAndGoingNextScene(isRandom);
+                    GestionSheep.winAndGoingNextScene(isRandom);
                 }
             }
         }

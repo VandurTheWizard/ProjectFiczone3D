@@ -62,13 +62,15 @@ public class GestionSheep : MonoBehaviour
         {
             
             RandomGameController.loadScene(randomMode);
+            isEnded = false;
         }
         else
         {
             
             RandomGameController.loadScene(mainMenu);
+            isEnded = false;
         }
-        
-
+        yield return new WaitForSeconds(0.1f);
+        sheepAnimations.AnimationWait();
     }
 }
