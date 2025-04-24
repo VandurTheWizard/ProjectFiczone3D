@@ -21,6 +21,10 @@ public class TrashMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if(waitTimer >= waitTime)
         {
             MoveToNextPoint();

@@ -19,6 +19,10 @@ public class MovimientoRumba : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         if (!estaEnMovimiento)
         {
             transform.Rotate(Vector3.forward * Time.deltaTime * velocidadRotacion);
@@ -28,16 +32,17 @@ public class MovimientoRumba : MonoBehaviour
         }
     }
 
-    public void isMove(InputAction.CallbackContext context)
+    public void OnJump()
     {
-        if (context.performed)
+        if (Time.timeScale == 0)
         {
-            spriteRenderer.gameObject.SetActive(false);
-            estaEnMovimiento = !estaEnMovimiento;
-        }else if (context.canceled)
-        {
-            spriteRenderer.gameObject.SetActive(true);
-            estaEnMovimiento = false;
+            return;
         }
+
+       
+        estaEnMovimiento = !estaEnMovimiento;
+        spriteRenderer.gameObject.SetActive(!estaEnMovimiento);
+
+
     }
 }
