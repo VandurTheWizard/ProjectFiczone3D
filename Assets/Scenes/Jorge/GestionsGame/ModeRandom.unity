@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - BurguerGame
+  - CorreYCogeRandom
 --- !u!4 &1003322044
 Transform:
   m_ObjectHideFlags: 0

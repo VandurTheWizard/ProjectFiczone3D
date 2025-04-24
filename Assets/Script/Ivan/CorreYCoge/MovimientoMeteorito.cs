@@ -31,6 +31,10 @@ public class MeteoritoMovil : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         // Movimiento en Z (hacia adelante o atrás según la velocidad)
         transform.Translate(0, 0, velocidad * Time.deltaTime);
 

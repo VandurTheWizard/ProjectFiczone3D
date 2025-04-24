@@ -45,7 +45,7 @@ public class TutorialGestions : MonoBehaviour
     {
         while (true)
         {
-            if(Cursor.lockState != CursorLockMode.None)
+            if(Cursor.lockState != CursorLockMode.None || !Cursor.visible)
             {
                 cursorStatus = Cursor.lockState;
                 cursorVisible = Cursor.visible;
