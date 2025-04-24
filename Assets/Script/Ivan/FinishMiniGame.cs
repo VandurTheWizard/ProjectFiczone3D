@@ -28,7 +28,15 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void AnimationLose(){
-        GestionSheep.loseAndGoingNextScene(isRandom);
+        if (isInfinite)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            GestionSheep.loseAndGoingNextScene(isRandom);
+        }
+            
     }
 
     private void ExitToMainMenu(){
@@ -36,13 +44,15 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void NextLevel(){
+
         if (isInfinite)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
-            GestionSheep.winAndGoingNextScene(isRandom);// Si la siguiente es escena es Random o normal
+            GestionSheep.winAndGoingNextScene(isRandom);
         }
+            
     }
 }
