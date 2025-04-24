@@ -149,7 +149,6 @@ public class HealthManager : MonoBehaviour
         {
             Debug.Log("Game Over! El jugador ha sido derrotado.");
             loadNextScene();
-            Time.timeScale = 0;
         }
     }
 
@@ -160,7 +159,6 @@ public class HealthManager : MonoBehaviour
             fill.SetActive(false);
             Debug.Log("¡Victoria! Has derrotado al dragón.");
             loadNextScene();
-            Time.timeScale = 0;
         }
     }
 
