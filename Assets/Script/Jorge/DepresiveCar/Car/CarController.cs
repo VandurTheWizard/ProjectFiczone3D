@@ -23,7 +23,7 @@ public class CarController : MonoBehaviour
     private bool isAddPoint = true;
 
     public bool isInfinity = false;
-    public string nextScene = "";
+    public bool isRandom = false;
 
     private void Start()
     {
@@ -88,7 +88,7 @@ public class CarController : MonoBehaviour
         textMeshProUGUI.text = "Your point: " + pointa;
         if (pointa > 10000 && !isInfinity)
         {
-            loadNextScene();
+            loadNextSceneWin();
         }
 
     }
@@ -102,7 +102,7 @@ public class CarController : MonoBehaviour
             }
             else
             {
-                loadNextScene();
+                loadNextSceneLose();
             }
 
         }
@@ -118,11 +118,15 @@ public class CarController : MonoBehaviour
 
     }
 
-    private void loadNextScene()
+    private void loadNextSceneLose()
     {
         isAddPoint = false;
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.None;
-        RandomGameController.loadScene(nextScene);
+        GestionSheep.loseAndGoingNextScene(isRandom);
+    }
+
+    private void loadNextSceneWin()
+    {
+        isAddPoint = false;
+        GestionSheep.winAndGoingNextScene(isRandom);
     }
 }
