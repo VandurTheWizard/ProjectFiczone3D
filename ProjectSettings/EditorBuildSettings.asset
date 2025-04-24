@@ -50,6 +50,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuSeleccion.unity
     guid: 7a4c46de15aa2454bbb2481f57ad45e7
+  - enabled: 1
+    path: Assets/Scenes/Ivan/CorreYCogeInfinite.unity
+    guid: e6a7a756e6be47a45a11e5c279c7489a
+  - enabled: 1
+    path: Assets/Scenes/Ivan/CorreYCoge.unity
+    guid: 16a9486d31908314ab7da887689b59d7
+  - enabled: 1
+    path: Assets/Scenes/Ivan/CorreYCogeRandom.unity
+    guid: cab34ea5abd9ac74e8220943d45d9285
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

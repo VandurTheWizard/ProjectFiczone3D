@@ -27,8 +27,7 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void AnimationLose(){
-        animacionesFinPartida.AnimacionPerdedora();
-        Invoke("ExitToMainMenu", 2f);
+        GestionSheep.loseAndGoingNextScene(true);
     }
 
     private void ExitToMainMenu(){
