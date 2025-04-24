@@ -500,6 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
+  - SwordGame
+  - ScannerGame
+  - LaserGame
   - CorreYCogeRandom
 --- !u!4 &1003322044
 Transform:

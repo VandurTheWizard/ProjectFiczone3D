@@ -9,6 +9,7 @@ public class DivePlayer : MonoBehaviour
     private Vector2 moveInput;
     private Rigidbody rb;
     public FallTracker fallTracker;
+    public bool isRandom = false;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class DivePlayer : MonoBehaviour
             isFalling = false;
             rb.useGravity = false;
             rb.linearVelocity = Vector3.zero;
-            fallTracker.StopTracking();
+            fallTracker.StopTracking(isRandom);
             // Falta que el jugador explote y se reinicie el nivel
         } else if (collision.gameObject.CompareTag("Enemy"))
         {
@@ -71,7 +72,7 @@ public class DivePlayer : MonoBehaviour
             isFalling = false;
             rb.useGravity = false;
             rb.linearVelocity = Vector3.zero;
-            fallTracker.StopTracking();
+            fallTracker.StopTrackingWin(isRandom);
             // Falta que el jugador gane y pasemos de nivel
         }
         else
