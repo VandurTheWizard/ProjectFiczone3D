@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 30
   nextScene: ModeRandom
-  isRandom: 0
+  isRandom: 1
   timeSlider: {fileID: 1217419497}
 --- !u!114 &1308458120
 MonoBehaviour:
