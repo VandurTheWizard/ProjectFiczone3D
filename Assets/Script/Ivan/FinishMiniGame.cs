@@ -28,7 +28,7 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void AnimationLose(){
-        GestionSheep.loseAndGoingNextScene(true);
+        GestionSheep.loseAndGoingNextScene(isRandom);
     }
 
     private void ExitToMainMenu(){

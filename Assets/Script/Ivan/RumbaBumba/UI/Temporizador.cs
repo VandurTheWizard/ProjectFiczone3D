@@ -19,6 +19,10 @@ public class Temporadizador : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
         tiempoRestante -= Time.deltaTime;
         if(timeIsOver) return;
         
