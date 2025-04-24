@@ -6,7 +6,6 @@ public class Timer : MonoBehaviour
 {
     public float maxTime = 30f;
     private float currentTime;
-    public string nextScene = "";
     public bool isRandom = false;
 
     public Slider timeSlider;
@@ -36,7 +35,11 @@ public class Timer : MonoBehaviour
         {
             Debug.Log("Se acabó el tiempo.");
             if (isRandom)
-                loadNextScene();
+                if (ScoreManager.Instance.score > 150) {
+                    loadNextSceneWin(isRandom);
+                } else {
+                    loadNextSceneLose(isRandom);
+                }
             else {
                 loseInfinity(ScoreManager.Instance.score);
             }
@@ -50,11 +53,18 @@ public class Timer : MonoBehaviour
         Debug.Log("Tiempo añadido: " + timeToAdd + " -> Tiempo actual: " + currentTime);
     }
 
-    public void loadNextScene()
+    private void loadNextSceneLose(bool isRandom)
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        RandomGameController.loadScene(nextScene);
+        GestionSheep.loseAndGoingNextScene(isRandom);
+    }
+
+    private void loadNextSceneWin(bool isRandom)
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        GestionSheep.winAndGoingNextScene(isRandom);
     }
 
     public void loseInfinity(float point)

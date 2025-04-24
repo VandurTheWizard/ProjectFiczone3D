@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     public GameObject fill;
     public GameObject heart1, heart2, heart3;
 
-    public string nextScene = "";
+    public bool isRandom = false;
 
     public TextMeshProUGUI textPlayer;
     public TextMeshProUGUI textDrako;
@@ -148,7 +148,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             Debug.Log("Game Over! El jugador ha sido derrotado.");
-            loadNextScene();
+            loadNextSceneLose();
         }
     }
 
@@ -158,14 +158,21 @@ public class HealthManager : MonoBehaviour
         {
             fill.SetActive(false);
             Debug.Log("¡Victoria! Has derrotado al dragón.");
-            loadNextScene();
+            loadNextSceneWin();
         }
     }
 
-    public void loadNextScene()
+    private void loadNextSceneLose()
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        RandomGameController.loadScene(nextScene);
+        GestionSheep.loseAndGoingNextScene(isRandom);
+    }
+
+    private void loadNextSceneWin()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        GestionSheep.winAndGoingNextScene(isRandom);
     }
 }

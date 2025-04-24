@@ -3,7 +3,6 @@ using UnityEngine;
 public class InfiniteMode : MonoBehaviour
 {
     public bool isInfinite = false;
-    public string nextScene = "";
     public GameObject cilindro;
     public GameObject Win;
 
@@ -16,11 +15,18 @@ public class InfiniteMode : MonoBehaviour
         Instantiate(cilindro, newPosition, uprightRotation);
     }
 
-    public void loadNextScene()
+    public void loadNextSceneLoseJump(bool isRandom)
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        RandomGameController.loadScene(nextScene);
+        GestionSheep.loseAndGoingNextScene(isRandom);
+    }
+
+    public void loadNextSceneWinJump(bool isRandom)
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        GestionSheep.winAndGoingNextScene(isRandom);
     }
 
     public void loseInfinity(float point)

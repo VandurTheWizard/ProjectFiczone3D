@@ -51,15 +51,22 @@ public class FallTracker : MonoBehaviour
         }
     }
 
-    public void StopTracking()
+    public void StopTracking(bool isRandom)
     {
         isTracking = false;
         if (infiniteMode.isInfinite)
         {
             infiniteMode.loseInfinity(metersFallen);
         } else {
-            infiniteMode.loadNextScene();
+            infiniteMode.loadNextSceneLoseJump(isRandom);
         }
+        Debug.Log("Sobreviviste " + Mathf.FloorToInt(metersFallen) + " metros.");
+    }
+
+    public void StopTrackingWin(bool isRandom)
+    {
+        isTracking = false;
+        infiniteMode.loadNextSceneWinJump(isRandom);
         Debug.Log("Sobreviviste " + Mathf.FloorToInt(metersFallen) + " metros.");
     }
 }
