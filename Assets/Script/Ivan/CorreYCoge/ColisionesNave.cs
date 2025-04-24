@@ -16,6 +16,7 @@ public class ColisionesNave : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trash"))
         {
+            GetComponent<AudioSource>().Play();
             gestionCorreYCoge.PerderNivel();
             movimientoCorreYCoge.isLose = true;
         }
