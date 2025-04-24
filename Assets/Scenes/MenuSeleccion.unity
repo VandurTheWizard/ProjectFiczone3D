@@ -9612,7 +9612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CorreYCoge
+  m_text: Aventura espacial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d72765e4d9f85854eb8d5829a12a9565, type: 2}
   m_sharedMaterial: {fileID: 229029291688574738, guid: d72765e4d9f85854eb8d5829a12a9565, type: 2}
