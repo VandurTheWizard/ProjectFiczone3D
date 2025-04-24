@@ -270,7 +270,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
+  - DepresiveCarRandomMode
+  - FireDugeonRandom
+  - DartDugeonRandomMode
+  - AssassingEscapeRandom
   - SwordGame
+  - ScannerGame
+  - LaserGame
 --- !u!4 &1003322044
 Transform:
   m_ObjectHideFlags: 0

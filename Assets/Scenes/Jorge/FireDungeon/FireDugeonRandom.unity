@@ -6755,13 +6755,45 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.45882356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.86666673
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281562589
+      objectReference: {fileID: 0}
     - target: {fileID: 2100571868412593041, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.b
+      value: 0.44705886
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.g
+      value: 0.45098042
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242806243395738100, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_Color.r
+      value: 0.45098042
+      objectReference: {fileID: 0}
     - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_Name
       value: CanvasTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3786300121801852843, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize

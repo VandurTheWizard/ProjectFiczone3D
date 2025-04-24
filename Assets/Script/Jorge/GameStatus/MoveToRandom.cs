@@ -7,6 +7,6 @@ public class MoveToRandom : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SceneManager.LoadScene("ModeRandom");   
+        SceneManager.LoadScene("MenuSeleccion");   
     }
 }
