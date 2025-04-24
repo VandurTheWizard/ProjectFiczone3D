@@ -22,7 +22,7 @@ public class GestionRumba : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
 
-        NuevoNivel();
+        
         
     }
 
@@ -38,17 +38,18 @@ public class GestionRumba : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-        NuevoNivel();
+        //NuevoNivel();
 
-        Debug.Log("Escena cargada: " + scene.name);
         if (scene.name != "RumbaBumbaInfinito")
         {
             Debug.Log("Escena cagada");
             Destroy(gameObject);
             return;
         }
+
+        NuevoNivel();
     }
 
     public void NuevoNivel(){

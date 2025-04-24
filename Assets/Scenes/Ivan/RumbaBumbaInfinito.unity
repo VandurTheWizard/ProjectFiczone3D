@@ -4849,10 +4849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee710e092df25941a71c2a27ceb0c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivel: 0
+  nivel: 1
   maximoNivel: 10
   tiempo: 10
-  tiempoAcomulado: 0
+  tiempoAcomulado: 10
 --- !u!4 &1294416423
 Transform:
   m_ObjectHideFlags: 0
@@ -6900,7 +6900,7 @@ MonoBehaviour:
   tutoriales:
   - nombreEscena: RumbaBumba
     objetoTutorial: {fileID: 368475511093688666, guid: 71c356f58daf86a4b8db38a4612f2d1a, type: 3}
-    volverAVer: 1
+    volverAVer: 0
 --- !u!4 &1914479711
 Transform:
   m_ObjectHideFlags: 0
