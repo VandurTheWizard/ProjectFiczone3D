@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInfinite: 1
   animacionesFinPartida: {fileID: 0}
-  isRandom: 1
+  isRandom: 0
 --- !u!4 &377728795
 Transform:
   m_ObjectHideFlags: 0
