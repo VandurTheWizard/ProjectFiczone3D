@@ -6,6 +6,7 @@ public class GestorPartidaRumba : MonoBehaviour
 
     public void ObtenerNumeroBasura(int numeroBasura)
     {
+        Debug.Log("Numero de basura: " + numeroBasura);
         this.numeroBasura = numeroBasura;
         if (numeroBasura <= 0)
         {
