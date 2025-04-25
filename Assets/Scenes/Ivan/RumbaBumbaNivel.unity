@@ -5091,6 +5091,7 @@ MonoBehaviour:
   nivel: 0
   maximoNivel: 3
   tiempo: 15
+  isInfinite: 0
 --- !u!1 &1299745290
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,6 +7791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3786300121801852843, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize
       value: 67.7
@@ -7876,27 +7881,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1728
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 432
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 864
       objectReference: {fileID: 0}
     - target: {fileID: 6699808625689863618, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -216
       objectReference: {fileID: 0}
     - target: {fileID: 7482201182118794622, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize
