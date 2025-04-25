@@ -33,7 +33,7 @@ public class GameGestions : MonoBehaviour
 
         if(time > maxTime)
         {
-            GestionSheep.winAndGoingNextScene(isRandom);
+            GestionSheep.loseAndGoingNextScene(isRandom);
         }
         
     }

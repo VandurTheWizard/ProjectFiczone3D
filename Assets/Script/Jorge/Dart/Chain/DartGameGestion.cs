@@ -74,7 +74,7 @@ public class DartGameGestion : MonoBehaviour
                 
             return;
         }
-        if(point > 500 && !isInfinite)
+        if(point > 200 && !isInfinite)
         {
             loseWinNormal();
         }
