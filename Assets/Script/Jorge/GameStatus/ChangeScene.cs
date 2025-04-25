@@ -8,5 +8,8 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 
-
+    public void startRandom()
+    {
+        RandomGameController.startModeRandom();
+    }
 }

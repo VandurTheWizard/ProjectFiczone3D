@@ -5102,6 +5102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rumba
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f5e83ace1857ed45885a7fe347579c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

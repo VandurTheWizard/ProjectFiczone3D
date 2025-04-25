@@ -8,6 +8,7 @@ public class GestionRumbaNivel : MonoBehaviour
     public float tiempo = 15f;
     private TemporizadorNivel temporizador;
     private FinishMiniGame finishMiniGame;
+    public bool isInfinite = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

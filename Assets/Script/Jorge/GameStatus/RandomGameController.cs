@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class RandomGameController : MonoBehaviour
@@ -16,6 +15,12 @@ public class RandomGameController : MonoBehaviour
     public void Start()
     {
         StartCoroutine(nextGame());
+    }
+
+    public static void startModeRandom()
+    {
+        bufferScenes = new List<int>();
+        loadScene(mainScene);
     }
 
     private IEnumerator nextGame()

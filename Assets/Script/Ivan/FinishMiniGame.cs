@@ -28,14 +28,12 @@ public class FinishMiniGame : MonoBehaviour
     }
 
     private void AnimationLose(){
-        if (isInfinite)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        else
+
+        if (!isInfinite)
         {
             GestionSheep.loseAndGoingNextScene(isRandom);
         }
+            
             
     }
 
