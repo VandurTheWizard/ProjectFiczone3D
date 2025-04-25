@@ -509,6 +509,7 @@ MonoBehaviour:
   - LaserGameRandom
   - CorreYCogeRandom
   - RumbaBumbaRandom
+  - BurguerGameRandom
 --- !u!4 &1003322044
 Transform:
   m_ObjectHideFlags: 0
