@@ -5088,7 +5088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78d225dbb043f40bf97f330ee5d469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivel: 0
+  nivel: 1
   maximoNivel: 3
   tiempo: 15
   isInfinite: 0
@@ -7781,7 +7781,7 @@ PrefabInstance:
       value: "\xA1Bater\xEDa cr\xEDtica! Recoge las tarjetas flexibles esparcidas
         por el suelo (si las hay) y vuelve a la base de carga antes de que sea demasiado
         tarde. Recuerda que la rumba gira por s\xED sola, tu \xFAnica opci\xF3n para
-        avanzar es pulsar el bot\xF3n."
+        avanzar es pulsar el bot\xF3n, para volver a girar dale de nuevo."
       objectReference: {fileID: 0}
     - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize

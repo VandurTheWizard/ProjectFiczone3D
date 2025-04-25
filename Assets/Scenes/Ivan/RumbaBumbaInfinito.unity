@@ -1038,11 +1038,11 @@ PrefabInstance:
       value: "\xA1Bater\xEDa cr\xEDtica! Recoge las tarjetas flexibles esparcidas
         por el suelo (si las hay) y vuelve a la base de carga antes de que sea demasiado
         tarde. Recuerda que la rumba gira por s\xED sola, tu \xFAnica opci\xF3n para
-        avanzar es pulsar el bot\xF3n."
+        avanzar es pulsar el bot\xF3n, para volver a girar dale de nuevo."
       objectReference: {fileID: 0}
     - target: {fileID: 1846293890057262700, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_fontSize
-      value: 53.55
+      value: 51.3
       objectReference: {fileID: 0}
     - target: {fileID: 3355037729625673893, guid: b3bb17eefd32cbe488ec3b3bd3535f53, type: 3}
       propertyPath: m_Name
